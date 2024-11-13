@@ -4,10 +4,10 @@ import (
 	"errors"
 
 	"github.com/fatih/color"
-	"github.com/grafana/grafana/pkg/cmd/grafana-cli/logger"
-	"github.com/grafana/grafana/pkg/cmd/grafana-cli/models"
-	"github.com/grafana/grafana/pkg/cmd/grafana-cli/services"
-	"github.com/grafana/grafana/pkg/cmd/grafana-cli/utils"
+	"github.com/myback/grafana/pkg/cmd/grafana-cli/logger"
+	"github.com/myback/grafana/pkg/cmd/grafana-cli/models"
+	"github.com/myback/grafana/pkg/cmd/grafana-cli/services"
+	"github.com/myback/grafana/pkg/cmd/grafana-cli/utils"
 )
 
 var ls_getPlugins func(path string) []models.InstalledPlugin = services.GetLocalPlugins

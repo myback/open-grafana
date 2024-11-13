@@ -7,19 +7,19 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"path"
 
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/api/pluginproxy"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/tsdb"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/myback/grafana/pkg/api/pluginproxy"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/plugins"
+	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/tsdb"
+	"github.com/myback/grafana/pkg/util/errutil"
 	"github.com/opentracing/opentracing-go"
 	"golang.org/x/net/context/ctxhttp"
 )
@@ -263,7 +263,7 @@ func (ar *AzureLogAnalyticsResponse) GetPrimaryResultTable() (*AzureLogAnalytics
 }
 
 func (e *AzureLogAnalyticsDatasource) unmarshalResponse(res *http.Response) (AzureLogAnalyticsResponse, error) {
-	body, err := ioutil.ReadAll(res.Body)
+	body, err := io.ReadAll(res.Body)
 	if err != nil {
 		return AzureLogAnalyticsResponse{}, err
 	}

@@ -12,9 +12,9 @@ import (
 
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/components/null"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/myback/grafana/pkg/components/null"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/util/errutil"
 )
 
 const (

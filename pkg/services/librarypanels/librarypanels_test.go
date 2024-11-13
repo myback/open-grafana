@@ -12,14 +12,14 @@ import (
 	"github.com/stretchr/testify/require"
 	"gopkg.in/macaron.v1"
 
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/dashboards"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/api/response"
+	"github.com/myback/grafana/pkg/bus"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/registry"
+	"github.com/myback/grafana/pkg/services/dashboards"
+	"github.com/myback/grafana/pkg/services/sqlstore"
+	"github.com/myback/grafana/pkg/setting"
 )
 
 const UserInDbName = "user_in_db"

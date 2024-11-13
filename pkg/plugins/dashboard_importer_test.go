@@ -1,13 +1,12 @@
 package plugins
 
 import (
-	"io/ioutil"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/dashboards"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/services/dashboards"
+	"github.com/myback/grafana/pkg/setting"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -34,7 +33,7 @@ func TestDashboardImport(t *testing.T) {
 			So(cmd.Result, ShouldNotBeNil)
 
 			resultStr, _ := mock.SavedDashboards[0].Dashboard.Data.EncodePretty()
-			expectedBytes, _ := ioutil.ReadFile("testdata/test-app/dashboards/connections_result.json")
+			expectedBytes, _ := os.ReadFile("testdata/test-app/dashboards/connections_result.json")
 			expectedJson, _ := simplejson.NewJson(expectedBytes)
 			expectedStr, _ := expectedJson.EncodePretty()
 

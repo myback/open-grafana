@@ -6,7 +6,7 @@ import (
 	"golang.org/x/time/rate"
 	"gopkg.in/macaron.v1"
 
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/models"
 )
 
 type getTimeFn func() time.Time

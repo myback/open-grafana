@@ -3,7 +3,7 @@ package tsdb
 import (
 	"context"
 
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/models"
 )
 
 type TsdbQueryEndpoint interface {

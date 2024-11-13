@@ -9,12 +9,12 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/alerting"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/bus"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/services/alerting"
+	"github.com/myback/grafana/pkg/setting"
 )
 
 func init() {

@@ -5,18 +5,18 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/services/validations"
+	"github.com/myback/grafana/pkg/services/validations"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/services/rendering"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/services/rendering"
+	"github.com/myback/grafana/pkg/setting"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/grafana/grafana/pkg/bus"
+	"github.com/myback/grafana/pkg/bus"
 	"github.com/stretchr/testify/require"
 
-	"github.com/grafana/grafana/pkg/components/imguploader"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/components/imguploader"
+	"github.com/myback/grafana/pkg/models"
 )
 
 func TestNotificationService(t *testing.T) {

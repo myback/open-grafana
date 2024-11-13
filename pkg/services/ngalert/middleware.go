@@ -1,7 +1,7 @@
 package ngalert
 
 import (
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/models"
 )
 
 func (api *apiImpl) validateOrgAlertDefinition(c *models.ReqContext) {

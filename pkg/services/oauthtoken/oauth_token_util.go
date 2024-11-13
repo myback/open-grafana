@@ -4,10 +4,10 @@ import (
 	"context"
 	"errors"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/login/social"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/bus"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/login/social"
+	"github.com/myback/grafana/pkg/models"
 	"golang.org/x/oauth2"
 )
 

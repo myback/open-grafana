@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/util"
 )
 
 type FrontendPluginBase struct {

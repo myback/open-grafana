@@ -41,7 +41,7 @@ func Test_Context(t *testing.T) {
 
 		Convey("Get request body", func() {
 			m.Get("/body1", func(ctx *Context) {
-				data, err := ioutil.ReadAll(ctx.Req.Body().ReadCloser())
+				data, err := io.ReadAll(ctx.Req.Body().ReadCloser())
 				So(err, ShouldBeNil)
 				So(string(data), ShouldEqual, "This is my request body")
 			})

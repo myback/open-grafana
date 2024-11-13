@@ -4,13 +4,13 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/myback/grafana/pkg/util"
 
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/search"
+	"github.com/myback/grafana/pkg/api/response"
+	"github.com/myback/grafana/pkg/bus"
+	"github.com/myback/grafana/pkg/infra/metrics"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/services/search"
 )
 
 func Search(c *models.ReqContext) response.Response {

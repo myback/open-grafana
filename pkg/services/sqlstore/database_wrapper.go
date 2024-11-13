@@ -10,10 +10,10 @@ import (
 
 	"github.com/gchaincl/sqlhooks"
 	"github.com/go-sql-driver/mysql"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/services/sqlstore/migrator"
 	"github.com/lib/pq"
 	"github.com/mattn/go-sqlite3"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/services/sqlstore/migrator"
 	"github.com/prometheus/client_golang/prometheus"
 	"xorm.io/core"
 )

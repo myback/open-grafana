@@ -5,14 +5,14 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/provisioning/dashboards"
-	"github.com/grafana/grafana/pkg/services/provisioning/datasources"
-	"github.com/grafana/grafana/pkg/services/provisioning/notifiers"
-	"github.com/grafana/grafana/pkg/services/provisioning/plugins"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/registry"
+	"github.com/myback/grafana/pkg/services/provisioning/dashboards"
+	"github.com/myback/grafana/pkg/services/provisioning/datasources"
+	"github.com/myback/grafana/pkg/services/provisioning/notifiers"
+	"github.com/myback/grafana/pkg/services/provisioning/plugins"
+	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/util/errutil"
 )
 
 type ProvisioningService interface {

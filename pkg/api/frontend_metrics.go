@@ -3,9 +3,9 @@ package api
 import (
 	"strings"
 
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/api/response"
+	"github.com/myback/grafana/pkg/infra/metrics"
+	"github.com/myback/grafana/pkg/models"
 )
 
 func (hs *HTTPServer) PostFrontendMetrics(c *models.ReqContext, cmd metrics.PostFrontendMetricsCommand) response.Response {

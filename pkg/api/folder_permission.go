@@ -4,13 +4,13 @@ import (
 	"errors"
 	"time"
 
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/dashboards"
-	"github.com/grafana/grafana/pkg/services/guardian"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/myback/grafana/pkg/api/dtos"
+	"github.com/myback/grafana/pkg/api/response"
+	"github.com/myback/grafana/pkg/bus"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/services/dashboards"
+	"github.com/myback/grafana/pkg/services/guardian"
+	"github.com/myback/grafana/pkg/util"
 )
 
 func (hs *HTTPServer) GetFolderPermissionList(c *models.ReqContext) response.Response {

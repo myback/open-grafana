@@ -12,14 +12,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/infra/remotecache"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/ldap"
-	"github.com/grafana/grafana/pkg/services/multildap"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/myback/grafana/pkg/bus"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/infra/remotecache"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/services/ldap"
+	"github.com/myback/grafana/pkg/services/multildap"
+	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/util"
 )
 
 const (

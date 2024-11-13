@@ -16,11 +16,11 @@ import (
 	"github.com/centrifugal/centrifuge"
 	"github.com/google/uuid"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/tsdb"
-	"github.com/grafana/grafana/pkg/util/retryer"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/tsdb"
+	"github.com/myback/grafana/pkg/util/retryer"
 	"golang.org/x/sync/errgroup"
 )
 

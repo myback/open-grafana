@@ -4,25 +4,24 @@ import (
 	"bytes"
 	"context"
 	"errors"
-	"io/ioutil"
 	"runtime"
 	"sync"
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/services/alerting"
-	"github.com/grafana/grafana/pkg/services/licensing"
+	"github.com/myback/grafana/pkg/services/alerting"
+	"github.com/myback/grafana/pkg/services/licensing"
 	"github.com/stretchr/testify/require"
 
 	"net/http"
 	"net/http/httptest"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/bus"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/plugins"
+	"github.com/myback/grafana/pkg/services/sqlstore"
+	"github.com/myback/grafana/pkg/setting"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -191,7 +190,7 @@ func TestMetrics(t *testing.T) {
 		var req *http.Request
 		ts := httptest.NewServer(http.HandlerFunc(func(rw http.ResponseWriter, r *http.Request) {
 			req = r
-			buf, err := ioutil.ReadAll(r.Body)
+			buf, err := io.ReadAll(r.Body)
 			if err != nil {
 				t.Fatalf("Failed to read response body, err=%v", err)
 			}

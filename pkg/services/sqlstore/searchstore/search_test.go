@@ -1,3 +1,4 @@
+//go:build integration
 // +build integration
 
 // package search_test contains integration tests for search
@@ -9,12 +10,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/services/sqlstore/migrator"
-	"github.com/grafana/grafana/pkg/services/sqlstore/permissions"
-	"github.com/grafana/grafana/pkg/services/sqlstore/searchstore"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/services/sqlstore"
+	"github.com/myback/grafana/pkg/services/sqlstore/migrator"
+	"github.com/myback/grafana/pkg/services/sqlstore/permissions"
+	"github.com/myback/grafana/pkg/services/sqlstore/searchstore"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/alerting"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/bus"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/services/alerting"
+	"github.com/myback/grafana/pkg/setting"
 )
 
 func init() {
@@ -53,7 +53,8 @@ type GoogleChatNotifier struct {
 	log log.Logger
 }
 
-/**
+/*
+*
 Structs used to build a custom Google Hangouts Chat message card.
 See: https://developers.google.com/hangouts/chat/reference/message-formats/cards
 */

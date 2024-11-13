@@ -4,13 +4,12 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"sort"
 	"strconv"
 	"time"
 
-	"github.com/grafana/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/infra/log"
 
 	"github.com/grafana/grafana-plugin-sdk-go/backend/resource/httpadapter"
 )
@@ -114,7 +113,7 @@ func createJSONHandler(logger log.Logger) http.Handler {
 					logger.Warn("Failed to close response body", "err", err)
 				}
 			}()
-			b, err := ioutil.ReadAll(req.Body)
+			b, err := io.ReadAll(req.Body)
 			if err != nil {
 				logger.Error("Failed to read request body to bytes", "error", err)
 			} else {

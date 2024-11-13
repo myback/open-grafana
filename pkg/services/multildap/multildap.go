@@ -3,9 +3,9 @@ package multildap
 import (
 	"errors"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/ldap"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/services/ldap"
 )
 
 // logger to log

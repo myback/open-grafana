@@ -4,10 +4,10 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/ldap"
-	"github.com/grafana/grafana/pkg/services/multildap"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/services/ldap"
+	"github.com/myback/grafana/pkg/services/multildap"
+	"github.com/myback/grafana/pkg/setting"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

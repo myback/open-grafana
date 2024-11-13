@@ -7,19 +7,19 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/alerting"
-	"github.com/grafana/grafana/pkg/services/dashboards"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/services/alerting"
+	"github.com/myback/grafana/pkg/services/dashboards"
 
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/dashdiffs"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/services/guardian"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/myback/grafana/pkg/api/dtos"
+	"github.com/myback/grafana/pkg/api/response"
+	"github.com/myback/grafana/pkg/bus"
+	"github.com/myback/grafana/pkg/components/dashdiffs"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/infra/metrics"
+	"github.com/myback/grafana/pkg/plugins"
+	"github.com/myback/grafana/pkg/services/guardian"
+	"github.com/myback/grafana/pkg/util"
 )
 
 const (

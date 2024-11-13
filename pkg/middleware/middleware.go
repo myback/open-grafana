@@ -6,8 +6,8 @@ import (
 
 	macaron "gopkg.in/macaron.v1"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/setting"
 )
 
 var (

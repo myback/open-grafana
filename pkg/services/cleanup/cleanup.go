@@ -7,15 +7,15 @@ import (
 	"path"
 	"time"
 
-	"github.com/grafana/grafana/pkg/services/shorturls"
+	"github.com/myback/grafana/pkg/services/shorturls"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/infra/serverlock"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/annotations"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/bus"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/infra/serverlock"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/registry"
+	"github.com/myback/grafana/pkg/services/annotations"
+	"github.com/myback/grafana/pkg/setting"
 )
 
 type CleanUpService struct {

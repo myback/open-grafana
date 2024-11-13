@@ -1,3 +1,4 @@
+//go:build integration
 // +build integration
 
 package ngalert
@@ -8,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/ngalert/eval"
+	"github.com/myback/grafana/pkg/registry"
+	"github.com/myback/grafana/pkg/services/ngalert/eval"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

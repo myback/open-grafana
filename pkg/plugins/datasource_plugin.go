@@ -4,13 +4,13 @@ import (
 	"encoding/json"
 	"path/filepath"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin/grpcplugin"
-	"github.com/grafana/grafana/pkg/plugins/datasource/wrapper"
-	"github.com/grafana/grafana/pkg/tsdb"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/plugins/backendplugin"
+	"github.com/myback/grafana/pkg/plugins/backendplugin/grpcplugin"
+	"github.com/myback/grafana/pkg/plugins/datasource/wrapper"
+	"github.com/myback/grafana/pkg/tsdb"
+	"github.com/myback/grafana/pkg/util/errutil"
 )
 
 // DataSourcePlugin contains all metadata about a datasource plugin

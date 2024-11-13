@@ -3,7 +3,7 @@ package models
 import (
 	"time"
 
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/setting"
 	"golang.org/x/oauth2"
 )
 

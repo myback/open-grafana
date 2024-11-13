@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/plugins/backendplugin"
+	"github.com/myback/grafana/pkg/setting"
 )
 
 var (

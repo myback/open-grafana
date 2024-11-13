@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"reflect"
@@ -13,14 +12,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/infra/fs"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/myback/grafana/pkg/infra/fs"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/infra/metrics"
+	"github.com/myback/grafana/pkg/plugins/backendplugin"
+	"github.com/myback/grafana/pkg/registry"
+	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/util"
+	"github.com/myback/grafana/pkg/util/errutil"
 )
 
 var (
@@ -513,7 +512,7 @@ func GetPluginMarkdown(pluginId string, name string) ([]byte, error) {
 	// nolint:gosec
 	// We can ignore the gosec G304 warning since we have cleaned the requested file path and subsequently
 	// use this with a prefix of the plugin's directory, which is set during plugin loading
-	data, err := ioutil.ReadFile(path)
+	data, err := os.ReadFile(path)
 	if err != nil {
 		return nil, err
 	}

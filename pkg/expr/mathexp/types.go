@@ -2,7 +2,7 @@ package mathexp
 
 import (
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/expr/mathexp/parse"
+	"github.com/myback/grafana/pkg/expr/mathexp/parse"
 )
 
 // Results is a container for Value interfaces.

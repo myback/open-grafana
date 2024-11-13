@@ -5,15 +5,15 @@ import (
 	"time"
 
 	"github.com/benbjohnson/clock"
-	"github.com/grafana/grafana/pkg/services/ngalert/eval"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
+	"github.com/myback/grafana/pkg/services/ngalert/eval"
+	"github.com/myback/grafana/pkg/services/sqlstore"
 
-	"github.com/grafana/grafana/pkg/api/routing"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/datasources"
-	"github.com/grafana/grafana/pkg/services/sqlstore/migrator"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/api/routing"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/registry"
+	"github.com/myback/grafana/pkg/services/datasources"
+	"github.com/myback/grafana/pkg/services/sqlstore/migrator"
+	"github.com/myback/grafana/pkg/setting"
 )
 
 const (

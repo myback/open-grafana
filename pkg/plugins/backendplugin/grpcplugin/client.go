@@ -6,10 +6,10 @@ import (
 	datasourceV1 "github.com/grafana/grafana-plugin-model/go/datasource"
 	rendererV1 "github.com/grafana/grafana-plugin-model/go/renderer"
 	"github.com/grafana/grafana-plugin-sdk-go/backend/grpcplugin"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin/pluginextensionv2"
 	goplugin "github.com/hashicorp/go-plugin"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/plugins/backendplugin"
+	"github.com/myback/grafana/pkg/plugins/backendplugin/pluginextensionv2"
 )
 
 const (

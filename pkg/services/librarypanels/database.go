@@ -6,10 +6,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/myback/grafana/pkg/api/dtos"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/services/sqlstore"
+	"github.com/myback/grafana/pkg/util"
 )
 
 var (

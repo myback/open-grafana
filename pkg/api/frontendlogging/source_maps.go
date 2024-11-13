@@ -1,7 +1,7 @@
 package frontendlogging
 
 import (
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"os"
@@ -9,11 +9,11 @@ import (
 	"strings"
 	"sync"
 
-	sourcemap "github.com/go-sourcemap/sourcemap"
+	"github.com/go-sourcemap/sourcemap"
 
 	"github.com/getsentry/sentry-go"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/plugins"
+	"github.com/myback/grafana/pkg/setting"
 )
 
 type sourceMapLocation struct {
@@ -39,7 +39,7 @@ func ReadSourceMapFromFS(dir string, path string) ([]byte, error) {
 			logger.Error("Failed to close source map file", "err", err)
 		}
 	}()
-	return ioutil.ReadAll(file)
+	return io.ReadAll(file)
 }
 
 type SourceMapStore struct {

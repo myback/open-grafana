@@ -1,14 +1,14 @@
 package social
 
 import (
+	"github.com/go-jose/go-jose/v3"
 	"net/http"
 	"reflect"
 	"testing"
 	"time"
 
+	"github.com/go-jose/go-jose/v3/jwt"
 	"golang.org/x/oauth2"
-	"gopkg.in/square/go-jose.v2"
-	"gopkg.in/square/go-jose.v2/jwt"
 )
 
 func TestSocialAzureAD_UserInfo(t *testing.T) {
@@ -242,12 +242,12 @@ func TestSocialAzureAD_UserInfo(t *testing.T) {
 
 			var raw string
 			if tt.claims != nil {
-				raw, err = jwt.Signed(sig).Claims(cl).Claims(tt.claims).CompactSerialize()
+				raw, err = jwt.Signed(sig).Claims(cl).Claims(tt.claims).Serialize()
 				if err != nil {
 					t.Error(err)
 				}
 			} else {
-				raw, err = jwt.Signed(sig).Claims(cl).CompactSerialize()
+				raw, err = jwt.Signed(sig).Claims(cl).Serialize()
 				if err != nil {
 					t.Error(err)
 				}

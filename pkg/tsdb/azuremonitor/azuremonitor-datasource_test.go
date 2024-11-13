@@ -3,7 +3,6 @@ package azuremonitor
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"net/url"
 	"path/filepath"
 	"testing"
@@ -12,9 +11,9 @@ import (
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/tsdb"
 	"github.com/stretchr/testify/require"
 	ptr "github.com/xorcare/pointer"
 )
@@ -501,7 +500,7 @@ func loadTestFile(t *testing.T, name string) AzureMonitorResponse {
 	path := filepath.Join("testdata", name)
 	// Ignore gosec warning G304 since it's a test
 	// nolint:gosec
-	jsonBody, err := ioutil.ReadFile(path)
+	jsonBody, err := os.ReadFile(path)
 	require.NoError(t, err)
 
 	var azData AzureMonitorResponse

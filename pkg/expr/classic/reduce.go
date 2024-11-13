@@ -5,7 +5,7 @@ import (
 	"sort"
 
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/expr/mathexp"
+	"github.com/myback/grafana/pkg/expr/mathexp"
 )
 
 func nilOrNaN(f *float64) bool {
@@ -22,7 +22,7 @@ func (cr classicReducer) ValidReduceFunc() bool {
 	return false
 }
 
-//nolint: gocyclo
+// nolint: gocyclo
 func (cr classicReducer) Reduce(series mathexp.Series) mathexp.Number {
 	num := mathexp.NewNumber("", nil)
 	num.SetValue(nil)

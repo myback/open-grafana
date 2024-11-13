@@ -11,21 +11,21 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/api/datasource"
-	"github.com/grafana/grafana/pkg/components/securejsondata"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/api/datasource"
+	"github.com/myback/grafana/pkg/components/securejsondata"
+	"github.com/myback/grafana/pkg/models"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
 	"golang.org/x/oauth2"
 	macaron "gopkg.in/macaron.v1"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/login/social"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/myback/grafana/pkg/bus"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/login/social"
+	"github.com/myback/grafana/pkg/plugins"
+	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/util"
 )
 
 func TestDataSourceProxy_routeRule(t *testing.T) {
@@ -229,7 +229,7 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 			var authorizationHeaderCall2 string
 
 			t.Run("first call should add authorization header with access token", func(t *testing.T) {
-				json, err := ioutil.ReadFile("./test-data/access-token-1.json")
+				json, err := os.ReadFile("./test-data/access-token-1.json")
 				require.NoError(t, err)
 
 				client = newFakeHTTPClient(t, json)
@@ -242,7 +242,7 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 				assert.True(t, strings.HasPrefix(authorizationHeaderCall1, "Bearer eyJ0e"))
 
 				t.Run("second call to another route should add a different access token", func(t *testing.T) {
-					json2, err := ioutil.ReadFile("./test-data/access-token-2.json")
+					json2, err := os.ReadFile("./test-data/access-token-2.json")
 					require.NoError(t, err)
 
 					req, err := http.NewRequest("GET", "http://localhost/asd", nil)

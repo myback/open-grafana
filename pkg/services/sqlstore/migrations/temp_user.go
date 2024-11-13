@@ -3,7 +3,7 @@ package migrations
 import (
 	"time"
 
-	. "github.com/grafana/grafana/pkg/services/sqlstore/migrator"
+	. "github.com/myback/grafana/pkg/services/sqlstore/migrator"
 	"xorm.io/xorm"
 )
 

@@ -3,7 +3,7 @@ package rendering
 import (
 	"testing"
 
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/setting"
 	"github.com/stretchr/testify/require"
 )
 

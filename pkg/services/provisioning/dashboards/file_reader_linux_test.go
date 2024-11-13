@@ -1,3 +1,4 @@
+//go:build linux
 // +build linux
 
 package dashboards
@@ -6,7 +7,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/infra/log"
 )
 
 var (

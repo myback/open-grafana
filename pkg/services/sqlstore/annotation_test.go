@@ -1,3 +1,4 @@
+//go:build integration
 // +build integration
 
 package sqlstore
@@ -8,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/grafana/grafana/pkg/services/annotations"
+	"github.com/myback/grafana/pkg/services/annotations"
 )
 
 func TestAnnotations(t *testing.T) {

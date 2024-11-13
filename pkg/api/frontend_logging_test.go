@@ -2,7 +2,6 @@ package api
 
 import (
 	"errors"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"os"
@@ -11,13 +10,13 @@ import (
 	"time"
 
 	"github.com/getsentry/sentry-go"
-	"github.com/grafana/grafana/pkg/api/frontendlogging"
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/api/routing"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/setting"
 	log "github.com/inconshreveable/log15"
+	"github.com/myback/grafana/pkg/api/frontendlogging"
+	"github.com/myback/grafana/pkg/api/response"
+	"github.com/myback/grafana/pkg/api/routing"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/plugins"
+	"github.com/myback/grafana/pkg/setting"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -63,7 +62,7 @@ func logSentryEventScenario(t *testing.T, desc string, event frontendlogging.Fro
 				return nil, errors.New("epic hard drive failure")
 			}
 			if strings.HasSuffix(path, "foo.js.map") {
-				f, err := ioutil.ReadFile("./frontendlogging/test-data/foo.js.map")
+				f, err := os.ReadFile("./frontendlogging/test-data/foo.js.map")
 				require.NoError(t, err)
 				return f, nil
 			}

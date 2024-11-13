@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -13,14 +14,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/api/datasource"
-	glog "github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/services/oauthtoken"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
-	"github.com/grafana/grafana/pkg/util/proxyutil"
+	"github.com/myback/grafana/pkg/api/datasource"
+	glog "github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/plugins"
+	"github.com/myback/grafana/pkg/services/oauthtoken"
+	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/util"
+	"github.com/myback/grafana/pkg/util/proxyutil"
 	"github.com/opentracing/opentracing-go"
 )
 
@@ -118,7 +119,7 @@ func (proxy *DataSourceProxy) HandleRequest() {
 		ModifyResponse: func(resp *http.Response) error {
 			if resp.StatusCode == 401 {
 				// The data source rejected the request as unauthorized, convert to 400 (bad request)
-				body, err := ioutil.ReadAll(resp.Body)
+				body, err := io.ReadAll(resp.Body)
 				if err != nil {
 					return fmt.Errorf("failed to read data source response body: %w", err)
 				}
@@ -302,7 +303,7 @@ func (proxy *DataSourceProxy) logRequest() {
 
 	var body string
 	if proxy.ctx.Req.Request.Body != nil {
-		buffer, err := ioutil.ReadAll(proxy.ctx.Req.Request.Body)
+		buffer, err := io.ReadAll(proxy.ctx.Req.Request.Body)
 		if err == nil {
 			proxy.ctx.Req.Request.Body = ioutil.NopCloser(bytes.NewBuffer(buffer))
 			body = string(buffer)

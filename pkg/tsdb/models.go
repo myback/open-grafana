@@ -6,10 +6,10 @@ import (
 	"fmt"
 
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/components/null"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
 	jsoniter "github.com/json-iterator/go"
+	"github.com/myback/grafana/pkg/components/null"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/models"
 )
 
 // TsdbQuery contains all information about a query request.

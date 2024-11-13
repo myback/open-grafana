@@ -19,10 +19,10 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/trace"
 	"github.com/prometheus/client_golang/prometheus"
-	cw "github.com/weaveworks/common/middleware"
 	"gopkg.in/macaron.v1"
 )
 
@@ -61,7 +61,7 @@ func Logger(cfg *setting.Cfg) macaron.Handler {
 				"referer", req.Referer(),
 			}
 
-			traceID, exist := cw.ExtractTraceID(ctxTyped.Req.Request.Context())
+			traceID, exist := trace.ExtractTraceID(ctxTyped.Req.Request.Context())
 			if exist {
 				logParams = append(logParams, "traceID", traceID)
 			}

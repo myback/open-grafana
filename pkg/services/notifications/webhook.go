@@ -13,7 +13,7 @@ import (
 
 	"golang.org/x/net/context/ctxhttp"
 
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/myback/grafana/pkg/util"
 )
 
 type Webhook struct {
@@ -91,7 +91,7 @@ func (ns *NotificationService) sendWebRequestSync(ctx context.Context, webhook *
 		return nil
 	}
 
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return err
 	}

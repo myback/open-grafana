@@ -6,9 +6,9 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/imguploader/gcs"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/components/imguploader/gcs"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/setting"
 )
 
 const (

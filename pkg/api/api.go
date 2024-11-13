@@ -5,14 +5,14 @@ import (
 	"time"
 
 	"github.com/go-macaron/binding"
-	"github.com/grafana/grafana/pkg/api/avatar"
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/api/frontendlogging"
-	"github.com/grafana/grafana/pkg/api/routing"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/middleware"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/api/avatar"
+	"github.com/myback/grafana/pkg/api/dtos"
+	"github.com/myback/grafana/pkg/api/frontendlogging"
+	"github.com/myback/grafana/pkg/api/routing"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/infra/metrics"
+	"github.com/myback/grafana/pkg/middleware"
+	"github.com/myback/grafana/pkg/models"
 )
 
 var plog = log.New("api")

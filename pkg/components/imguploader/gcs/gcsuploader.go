@@ -5,16 +5,15 @@ import (
 	"context"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"os"
 	"path"
 	"path/filepath"
 	"time"
 
 	"cloud.google.com/go/storage"
-	"github.com/grafana/grafana/pkg/ifaces/gcsifaces"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/myback/grafana/pkg/ifaces/gcsifaces"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/util"
 	"golang.org/x/oauth2/google"
 	"golang.org/x/oauth2/jwt"
 	"google.golang.org/api/option"
@@ -75,7 +74,7 @@ func (u *Uploader) Upload(ctx context.Context, imageDiskPath string) (string, er
 	var keyData []byte
 	if u.KeyFile != "" {
 		u.log.Debug("Opening key file ", u.KeyFile)
-		keyData, err = ioutil.ReadFile(u.KeyFile)
+		keyData, err = os.ReadFile(u.KeyFile)
 		if err != nil {
 			return "", err
 		}

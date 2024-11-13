@@ -1,3 +1,4 @@
+//go:build integration
 // +build integration
 
 package sqlstore
@@ -6,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/models"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

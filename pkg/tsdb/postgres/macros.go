@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/gtime"
-	"github.com/grafana/grafana/pkg/tsdb"
-	"github.com/grafana/grafana/pkg/tsdb/sqleng"
+	"github.com/myback/grafana/pkg/components/gtime"
+	"github.com/myback/grafana/pkg/tsdb"
+	"github.com/myback/grafana/pkg/tsdb/sqleng"
 )
 
 const rsIdentifier = `([_a-zA-Z0-9]+)`
@@ -68,7 +68,7 @@ func (m *postgresMacroEngine) Interpolate(query *tsdb.Query, timeRange *tsdb.Tim
 	return sql, nil
 }
 
-//nolint: gocyclo
+// nolint: gocyclo
 func (m *postgresMacroEngine) evaluateMacro(name string, args []string) (string, error) {
 	switch name {
 	case "__time":

@@ -7,13 +7,13 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/mail"
 	"regexp"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/util/errutil"
 	"golang.org/x/oauth2"
 )
 
@@ -234,7 +234,7 @@ func (s *SocialGenericOAuth) extractFromToken(token *oauth2.Token) *UserInfoJson
 				s.log.Warn("Failed closing zlib reader", "error", err)
 			}
 		}()
-		rawJSON, err = ioutil.ReadAll(fr)
+		rawJSON, err = io.ReadAll(fr)
 		if err != nil {
 			s.log.Error("Error decompressing payload", "error", err)
 			return nil

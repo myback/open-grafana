@@ -2,13 +2,12 @@ package alerting
 
 import (
 	"encoding/json"
-	"io/ioutil"
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/bus"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/models"
 	"github.com/stretchr/testify/require"
 )
 
@@ -21,7 +20,7 @@ func TestAlertingUsageStats(t *testing.T) {
 		var createFake = func(file string) *simplejson.Json {
 			// Ignore gosec warning G304 since it's a test
 			// nolint:gosec
-			content, err := ioutil.ReadFile(file)
+			content, err := os.ReadFile(file)
 			require.NoError(t, err, "expected to be able to read file")
 
 			j, err := simplejson.NewJson(content)
@@ -113,7 +112,7 @@ func TestParsingAlertRuleSettings(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			var settings json.Marshaler
 			if tc.file != "" {
-				content, err := ioutil.ReadFile(tc.file)
+				content, err := os.ReadFile(tc.file)
 				require.NoError(t, err, "expected to be able to read file")
 
 				settings, err = simplejson.NewJson(content)

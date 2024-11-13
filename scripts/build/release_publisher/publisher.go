@@ -276,7 +276,7 @@ func (p *publisher) postRequest(url string, obj interface{}, desc string) error 
 
 	if res.Body != nil {
 		defer res.Body.Close()
-		body, err := ioutil.ReadAll(res.Body)
+		body, err := io.ReadAll(res.Body)
 		if err != nil {
 			return err
 		}

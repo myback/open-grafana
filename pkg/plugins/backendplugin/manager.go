@@ -6,7 +6,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -15,12 +14,12 @@ import (
 
 	"github.com/grafana/grafana-aws-sdk/pkg/awsds"
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util/errutil"
-	"github.com/grafana/grafana/pkg/util/proxyutil"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/registry"
+	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/util/errutil"
+	"github.com/myback/grafana/pkg/util/proxyutil"
 )
 
 var (
@@ -278,7 +277,7 @@ func (m *manager) callResourceInternal(w http.ResponseWriter, req *http.Request,
 	proxyutil.ClearCookieHeader(req, keepCookieModel.KeepCookies)
 	proxyutil.PrepareProxyRequest(req)
 
-	body, err := ioutil.ReadAll(req.Body)
+	body, err := io.ReadAll(req.Body)
 	if err != nil {
 		return fmt.Errorf("failed to read request body: %w", err)
 	}

@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/models"
 )
 
 type SQLBuilder struct {

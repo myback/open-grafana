@@ -2,15 +2,15 @@ package ldap
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 	"sync"
 
 	"github.com/BurntSushi/toml"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/util/errutil"
 )
 
 // Config holds list of connections to LDAP
@@ -121,7 +121,7 @@ func readConfig(configFile string) (*Config, error) {
 
 	// nolint:gosec
 	// We can ignore the gosec G304 warning on this one because `filename` comes from grafana configuration file
-	fileBytes, err := ioutil.ReadFile(configFile)
+	fileBytes, err := os.ReadFile(configFile)
 	if err != nil {
 		return nil, errutil.Wrap("Failed to load LDAP config file", err)
 	}

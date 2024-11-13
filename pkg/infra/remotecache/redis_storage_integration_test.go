@@ -1,3 +1,4 @@
+//go:build redis
 // +build redis
 
 package remotecache
@@ -5,7 +6,7 @@ package remotecache
 import (
 	"testing"
 
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/setting"
 )
 
 func TestRedisCacheStorage(t *testing.T) {

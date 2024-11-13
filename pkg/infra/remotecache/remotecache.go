@@ -7,10 +7,10 @@ import (
 	"errors"
 	"time"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/registry"
+	"github.com/myback/grafana/pkg/services/sqlstore"
+	"github.com/myback/grafana/pkg/setting"
 )
 
 var (
@@ -39,7 +39,7 @@ func init() {
 // CacheStorage allows the caller to set, get and delete items in the cache.
 // Cached items are stored as byte arrays and marshalled using "encoding/gob"
 // so any struct added to the cache needs to be registered with `remotecache.Register`
-// ex `remotecache.Register(CacheableStruct{})``
+// ex `remotecache.Register(CacheableStruct{})“
 type CacheStorage interface {
 	// Get reads object from Cache
 	Get(key string) (interface{}, error)

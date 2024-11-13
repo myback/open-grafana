@@ -5,8 +5,8 @@ import (
 	"strings"
 
 	"github.com/getsentry/sentry-go"
-	"github.com/grafana/grafana/pkg/infra/log"
 	"github.com/inconshreveable/log15"
+	"github.com/myback/grafana/pkg/infra/log"
 )
 
 var logger = log.New("frontendlogging")

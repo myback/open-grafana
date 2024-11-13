@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/expr"
+	"github.com/myback/grafana/pkg/expr"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -136,7 +136,7 @@ func TestAlertQuery(t *testing.T) {
 					"datasourceUid": "000000001",
 					"queryType": "metricQuery",
 					"intervalMs": "invalid",
-					"extraParam": "some text"	
+					"extraParam": "some text"
 				}`),
 			},
 			expectedIsExpression:  false,

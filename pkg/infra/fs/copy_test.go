@@ -159,10 +159,10 @@ func compareDirs(t *testing.T, src, dst string) {
 		}
 
 		// nolint:gosec
-		srcData, err := ioutil.ReadFile(srcPath)
+		srcData, err := os.ReadFile(srcPath)
 		require.NoError(t, err)
 		// nolint:gosec
-		dstData, err := ioutil.ReadFile(dstPath)
+		dstData, err := os.ReadFile(dstPath)
 		require.NoError(t, err)
 
 		require.Equal(t, srcData, dstData)

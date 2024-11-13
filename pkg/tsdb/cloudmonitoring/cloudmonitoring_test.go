@@ -3,7 +3,6 @@ package cloudmonitoring
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"math"
 	"net/url"
 	"reflect"
@@ -11,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/tsdb"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -1123,7 +1122,7 @@ func loadTestFile(path string) (cloudMonitoringResponse, error) {
 
 	// Can ignore gosec warning G304 here since it's a test path
 	// nolint:gosec
-	jsonBody, err := ioutil.ReadFile(path)
+	jsonBody, err := os.ReadFile(path)
 	if err != nil {
 		return data, err
 	}

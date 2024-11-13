@@ -1,3 +1,4 @@
+//go:build integration
 // +build integration
 
 package alerting
@@ -11,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/setting"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

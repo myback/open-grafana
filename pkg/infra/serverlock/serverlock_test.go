@@ -7,8 +7,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/services/sqlstore"
 )
 
 func createTestableServerLock(t *testing.T) *ServerLockService {

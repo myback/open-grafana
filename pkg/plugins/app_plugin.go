@@ -6,11 +6,11 @@ import (
 	"strings"
 
 	"github.com/gosimple/slug"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin/grpcplugin"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/plugins/backendplugin"
+	"github.com/myback/grafana/pkg/plugins/backendplugin/grpcplugin"
+	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/util/errutil"
 )
 
 type AppPlugin struct {

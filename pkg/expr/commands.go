@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
-	"github.com/grafana/grafana/pkg/components/gtime"
-	"github.com/grafana/grafana/pkg/expr/mathexp"
+	"github.com/myback/grafana/pkg/components/gtime"
+	"github.com/myback/grafana/pkg/expr/mathexp"
 )
 
 // Command is an interface for all expression commands.

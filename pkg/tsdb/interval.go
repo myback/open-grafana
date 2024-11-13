@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/models"
 )
 
 var (
@@ -126,7 +126,7 @@ func FormatDuration(inter time.Duration) string {
 	return "1ms"
 }
 
-//nolint: gocyclo
+// nolint: gocyclo
 func roundInterval(interval time.Duration) time.Duration {
 	switch {
 	// 0.015s

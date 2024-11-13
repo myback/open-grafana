@@ -5,13 +5,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/services/validations"
+	"github.com/myback/grafana/pkg/services/validations"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/grafana/grafana/pkg/components/null"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/alerting"
+	"github.com/myback/grafana/pkg/components/null"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/services/alerting"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

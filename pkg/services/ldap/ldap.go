@@ -5,15 +5,15 @@ import (
 	"crypto/x509"
 	"errors"
 	"fmt"
-	"io/ioutil"
 	"math"
 	"net"
+	"os"
 	"strconv"
 	"strings"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/models"
 	"gopkg.in/ldap.v3"
 )
 
@@ -97,7 +97,7 @@ func (server *Server) Dial() error {
 		for _, caCertFile := range strings.Split(server.Config.RootCACert, " ") {
 			// nolint:gosec
 			// We can ignore the gosec G304 warning on this one because `caCertFile` comes from ldap config.
-			pem, err := ioutil.ReadFile(caCertFile)
+			pem, err := os.ReadFile(caCertFile)
 			if err != nil {
 				return err
 			}

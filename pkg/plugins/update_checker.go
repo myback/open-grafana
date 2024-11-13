@@ -2,14 +2,14 @@ package plugins
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/setting"
 	"github.com/hashicorp/go-version"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/setting"
 )
 
 var (
@@ -58,7 +58,7 @@ func (pm *PluginManager) checkForUpdates() {
 		}
 	}()
 
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		log.Tracef("Update check failed, reading response from grafana.com, %v", err.Error())
 		return
@@ -98,7 +98,7 @@ func (pm *PluginManager) checkForUpdates() {
 			pm.log.Warn("Failed to close response body", "err", err)
 		}
 	}()
-	body, err = ioutil.ReadAll(resp2.Body)
+	body, err = io.ReadAll(resp2.Body)
 	if err != nil {
 		log.Tracef("Update check failed, reading response from github.com, %v", err.Error())
 		return

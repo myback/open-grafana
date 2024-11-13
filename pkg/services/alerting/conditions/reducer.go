@@ -5,8 +5,8 @@ import (
 
 	"sort"
 
-	"github.com/grafana/grafana/pkg/components/null"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/myback/grafana/pkg/components/null"
+	"github.com/myback/grafana/pkg/tsdb"
 )
 
 // queryReducer reduces a timeseries to a nullable float
@@ -17,7 +17,7 @@ type queryReducer struct {
 	Type string
 }
 
-//nolint: gocyclo
+// nolint: gocyclo
 func (s *queryReducer) Reduce(series *tsdb.TimeSeries) null.Float {
 	if len(series.Points) == 0 {
 		return null.FloatFromPtr(nil)

@@ -2,12 +2,11 @@ package influxdb
 
 import (
 	"context"
-	"io/ioutil"
 	"net/url"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/models"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -46,7 +45,7 @@ func TestInfluxDBExecutor_createRequest(t *testing.T) {
 		q := req.URL.Query().Get("q")
 		assert.Empty(t, q)
 
-		body, err := ioutil.ReadAll(req.Body)
+		body, err := io.ReadAll(req.Body)
 		require.NoError(t, err)
 
 		testBodyValues := url.Values{}

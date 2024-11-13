@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/services/provisioning/dashboards"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/services/provisioning/dashboards"
+	"github.com/myback/grafana/pkg/setting"
 	"github.com/stretchr/testify/assert"
 )
 

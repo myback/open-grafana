@@ -5,16 +5,15 @@ import (
 	// remove the cron (v1) dependency
 
 	_ "github.com/beevik/etree"
-	_ "github.com/cortexproject/cortex/pkg/util"
 	_ "github.com/crewjam/saml"
+	_ "github.com/go-jose/go-jose/v3"
 	_ "github.com/gobwas/glob"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/licensing"
-	"github.com/grafana/grafana/pkg/services/validations"
-	_ "github.com/grafana/loki/pkg/logproto"
 	_ "github.com/grpc-ecosystem/go-grpc-middleware"
 	_ "github.com/jung-kurt/gofpdf"
 	_ "github.com/linkedin/goavro/v2"
+	"github.com/myback/grafana/pkg/registry"
+	"github.com/myback/grafana/pkg/services/licensing"
+	"github.com/myback/grafana/pkg/services/validations"
 	_ "github.com/pkg/errors"
 	_ "github.com/robfig/cron"
 	_ "github.com/robfig/cron/v3"
@@ -22,7 +21,6 @@ import (
 	_ "github.com/stretchr/testify/require"
 	_ "github.com/timberio/go-datemath"
 	_ "golang.org/x/time/rate"
-	_ "gopkg.in/square/go-jose.v2"
 )
 
 func init() {

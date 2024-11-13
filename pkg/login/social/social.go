@@ -4,17 +4,17 @@ import (
 	"crypto/tls"
 	"crypto/x509"
 	"fmt"
-	"io/ioutil"
 	"net/http"
+	"os"
 	"strings"
 
 	"context"
 
 	"golang.org/x/oauth2"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/util"
 )
 
 var (
@@ -268,7 +268,7 @@ func GetOAuthHttpClient(name string) (*http.Client, error) {
 	}
 
 	if info.TlsClientCa != "" {
-		caCert, err := ioutil.ReadFile(info.TlsClientCa)
+		caCert, err := os.ReadFile(info.TlsClientCa)
 		if err != nil {
 			logger.Error("Failed to setup TlsClientCa", "oauth", name, "error", err)
 			return nil, fmt.Errorf("failed to setup TlsClientCa: %w", err)

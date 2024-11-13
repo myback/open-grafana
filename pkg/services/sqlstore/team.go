@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/bus"
+	"github.com/myback/grafana/pkg/models"
 )
 
 func init() {
@@ -43,7 +43,7 @@ func getFilteredUsers(signedInUser *models.SignedInUser, hiddenUsers map[string]
 
 func getTeamMemberCount(filteredUsers []string) string {
 	if len(filteredUsers) > 0 {
-		return `(SELECT COUNT(*) FROM team_member 
+		return `(SELECT COUNT(*) FROM team_member
 			INNER JOIN ` + dialect.Quote("user") + ` ON team_member.user_id = ` + dialect.Quote("user") + `.id
 			WHERE team_member.team_id = team.id AND ` + dialect.Quote("user") + `.login NOT IN (?` +
 			strings.Repeat(",?", len(filteredUsers)-1) + ")" +

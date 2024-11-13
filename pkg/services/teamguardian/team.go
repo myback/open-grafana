@@ -1,8 +1,8 @@
 package teamguardian
 
 import (
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/bus"
+	"github.com/myback/grafana/pkg/models"
 )
 
 func CanAdmin(bus bus.Bus, orgId int64, teamId int64, user *models.SignedInUser) error {

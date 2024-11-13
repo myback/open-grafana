@@ -5,6 +5,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -13,11 +14,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/grafana/pkg/tsdb"
 
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/models"
 	"golang.org/x/net/context/ctxhttp"
 )
 
@@ -239,7 +240,7 @@ func (c *baseClientImpl) ExecuteMultisearch(r *MultiSearchRequest) (*MultiSearch
 
 	var bodyBytes []byte
 	if c.debugEnabled {
-		tmpBytes, err := ioutil.ReadAll(res.Body)
+		tmpBytes, err := io.ReadAll(res.Body)
 		if err != nil {
 			clientLog.Error("failed to read http response bytes", "error", err)
 		} else {

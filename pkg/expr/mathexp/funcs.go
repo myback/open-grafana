@@ -3,7 +3,7 @@ package mathexp
 import (
 	"math"
 
-	"github.com/grafana/grafana/pkg/expr/mathexp/parse"
+	"github.com/myback/grafana/pkg/expr/mathexp/parse"
 )
 
 var builtins = map[string]parse.Func{

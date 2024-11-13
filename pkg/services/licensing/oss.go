@@ -1,10 +1,10 @@
 package licensing
 
 import (
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/hooks"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/api/dtos"
+	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/services/hooks"
+	"github.com/myback/grafana/pkg/setting"
 )
 
 const (

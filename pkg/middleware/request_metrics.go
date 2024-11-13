@@ -6,10 +6,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/infra/metrics"
+	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/grafana/pkg/trace"
 	"github.com/prometheus/client_golang/prometheus"
-	cw "github.com/weaveworks/common/middleware"
 	"gopkg.in/macaron.v1"
 )
 
@@ -64,7 +64,7 @@ func RequestMetrics(cfg *setting.Cfg) func(handler string) macaron.Handler {
 				// since they dont make much sense. We should remove them later.
 				histogram := httpRequestDurationHistogram.
 					WithLabelValues(handler, strconv.Itoa(rw.Status()), req.Method)
-				if traceID, ok := cw.ExtractSampledTraceID(c.Req.Context()); ok {
+				if traceID, ok := trace.ExtractSampledTraceID(c.Req.Context()); ok {
 					// Need to type-convert the Observer to an
 					// ExemplarObserver. This will always work for a
 					// HistogramVec.
@@ -157,7 +157,7 @@ func sanitizeMethod(m string) string {
 // If the wrapped http.Handler has not set a status code, i.e. the value is
 // currently 0, sanitizeCode will return 200, for consistency with behavior in
 // the stdlib.
-//nolint: gocyclo
+// nolint: gocyclo
 func sanitizeCode(s int) string {
 	switch s {
 	case 100:

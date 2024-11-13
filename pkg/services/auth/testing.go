@@ -4,7 +4,7 @@ import (
 	"context"
 	"net"
 
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/myback/grafana/pkg/models"
 )
 
 type FakeUserAuthTokenService struct {

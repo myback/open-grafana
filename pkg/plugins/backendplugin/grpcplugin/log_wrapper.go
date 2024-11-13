@@ -3,11 +3,10 @@ package grpcplugin
 import (
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 
-	glog "github.com/grafana/grafana/pkg/infra/log"
 	"github.com/hashicorp/go-hclog"
+	glog "github.com/myback/grafana/pkg/infra/log"
 )
 
 type logWrapper struct {
@@ -22,7 +21,7 @@ func formatArgs(args ...interface{}) []interface{} {
 		return args
 	}
 
-	res := []interface{}{}
+	var res []any
 
 	for n := 0; n < len(args); n += 2 {
 		key := args[n]
@@ -38,40 +37,38 @@ func formatArgs(args ...interface{}) []interface{} {
 	return res
 }
 
-// Emit a message and key/value pairs at a provided log level
+// Log Emit a message and key/value pairs at a provided log level
 func (lw logWrapper) Log(level hclog.Level, msg string, args ...interface{}) {
 	switch level {
 	case hclog.Trace:
 		lw.Trace(msg, args...)
 	case hclog.Debug:
 		lw.Debug(msg, args...)
-	case hclog.Info:
-		lw.Info(msg, args...)
 	case hclog.Warn:
 		lw.Warn(msg, args...)
 	case hclog.Error:
 		lw.Error(msg, args...)
 	default:
-		// TODO: Handle hclog.NoLevel
+		lw.Info(msg, args...)
 	}
 }
 
-// Emit a message and key/value pairs at the TRACE level
+// Trace Emit a message and key/value pairs at the TRACE level
 func (lw logWrapper) Trace(msg string, args ...interface{}) {
 	lw.Logger.Debug(msg, formatArgs(args...)...)
 }
 
-// Emit a message and key/value pairs at the DEBUG level
+// Debug Emit a message and key/value pairs at the DEBUG level
 func (lw logWrapper) Debug(msg string, args ...interface{}) {
 	lw.Logger.Debug(msg, formatArgs(args...)...)
 }
 
-// Emit a message and key/value pairs at the INFO level
+// Info Emit a message and key/value pairs at the INFO level
 func (lw logWrapper) Info(msg string, args ...interface{}) {
 	lw.Logger.Info(msg, formatArgs(args...)...)
 }
 
-// Emit a message and key/value pairs at the WARN level
+// Warn Emit a message and key/value pairs at the WARN level
 func (lw logWrapper) Warn(msg string, args ...interface{}) {
 	lw.Logger.Warn(msg, formatArgs(args...)...)
 }
@@ -81,19 +78,19 @@ func (lw logWrapper) Error(msg string, args ...interface{}) {
 	lw.Logger.Error(msg, formatArgs(args...)...)
 }
 
-// Indicate if TRACE logs would be emitted.
+// IsTrace Indicate if TRACE logs would be emitted.
 func (lw logWrapper) IsTrace() bool { return true }
 
-// Indicate if DEBUG logs would be emitted.
+// IsDebug Indicate if DEBUG logs would be emitted.
 func (lw logWrapper) IsDebug() bool { return true }
 
-// Indicate if INFO logs would be emitted.
+// IsInfo Indicate if INFO logs would be emitted.
 func (lw logWrapper) IsInfo() bool { return true }
 
-// Indicate if WARN logs would be emitted.
+// IsWarn Indicate if WARN logs would be emitted.
 func (lw logWrapper) IsWarn() bool { return true }
 
-// Indicate if ERROR logs would be emitted.
+// IsError Indicate if ERROR logs would be emitted.
 func (lw logWrapper) IsError() bool { return true }
 
 // ImpliedArgs returns With key/value pairs
@@ -101,7 +98,7 @@ func (lw logWrapper) ImpliedArgs() []interface{} {
 	return lw.impliedArgs
 }
 
-// Creates a sublogger that will always have the given key/value pairs
+// With Creates a sublogger that will always have the given key/value pairs
 func (lw logWrapper) With(args ...interface{}) hclog.Logger {
 	return logWrapper{
 		Logger:      lw.Logger.New(args...),
@@ -110,12 +107,12 @@ func (lw logWrapper) With(args ...interface{}) hclog.Logger {
 	}
 }
 
-// Returns the Name of the logger
+// Name Returns the Name of the logger
 func (lw logWrapper) Name() string {
 	return lw.name
 }
 
-// Create a logger that will prepend the name string on the front of all messages.
+// Named Create a logger that will prepend the name string on the front of all messages.
 // If the logger already has a name, the new value will be appended to the current
 // name.
 func (lw logWrapper) Named(name string) hclog.Logger {
@@ -138,7 +135,7 @@ func (lw logWrapper) Named(name string) hclog.Logger {
 	}
 }
 
-// Create a logger that will prepend the name string on the front of all messages.
+// ResetNamed Create a logger that will prepend the name string on the front of all messages.
 // This sets the name of the logger to the value directly, unlike Named which honor
 // the current name as well.
 func (lw logWrapper) ResetNamed(name string) hclog.Logger {
@@ -149,15 +146,20 @@ func (lw logWrapper) ResetNamed(name string) hclog.Logger {
 	}
 }
 
-// No-op. The wrapped logger implementation cannot update the level on the fly.
-func (lw logWrapper) SetLevel(level hclog.Level) {}
+// SetLevel No-op. The wrapped logger implementation cannot update the level on the fly.
+func (lw logWrapper) SetLevel(hclog.Level) {}
 
-// Return a value that conforms to the stdlib log.Logger interface
-func (lw logWrapper) StandardLogger(ops *hclog.StandardLoggerOptions) *log.Logger {
+// GetLevel get logging level
+func (lw logWrapper) GetLevel() hclog.Level {
+	return hclog.Debug
+}
+
+// StandardLogger Return a value that conforms to the stdlib log.Logger interface
+func (lw logWrapper) StandardLogger(*hclog.StandardLoggerOptions) *log.Logger {
 	return nil
 }
 
-// Return a value that conforms to io.Writer, which can be passed into log.SetOutput()
-func (lw logWrapper) StandardWriter(opts *hclog.StandardLoggerOptions) io.Writer {
-	return ioutil.Discard
+// StandardWriter Return a value that conforms to io.Writer, which can be passed into log.SetOutput()
+func (lw logWrapper) StandardWriter(*hclog.StandardLoggerOptions) io.Writer {
+	return io.Discard
 }
