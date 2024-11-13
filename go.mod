@@ -78,13 +78,13 @@ require (
 	go.opentelemetry.io/collector v0.21.0
 	golang.org/x/crypto v0.29.0
 	golang.org/x/net v0.31.0
-	golang.org/x/oauth2 v0.23.0
+	golang.org/x/oauth2 v0.24.0
 	golang.org/x/sync v0.9.0
-	golang.org/x/time v0.5.0
+	golang.org/x/time v0.8.0
 	gonum.org/v1/gonum v0.12.0
 	google.golang.org/api v0.169.0
 	google.golang.org/grpc v1.67.1
-	gopkg.in/ini.v1 v1.62.0
+	gopkg.in/ini.v1 v1.67.0
 	gopkg.in/ldap.v3 v3.1.0
 	gopkg.in/macaron.v1 v1.4.0
 	gopkg.in/mail.v2 v2.3.1
@@ -216,8 +216,8 @@ replace (
 	github.com/apache/thrift => github.com/apache/thrift v0.14.1
 	github.com/crewjam/saml => github.com/grafana/saml v0.4.15-0.20240917091248-ae3bbdad8a56
 	github.com/go-macaron/binding => ./pkg/macaron/binding
+	gopkg.in/macaron.v1 v1.4.0 => ./pkg/macaron
 	github.com/grafana/grafana-aws-sdk v0.0.0 => ./src/grafana/grafana-aws-sdk
 	github.com/grafana/grafana-plugin-sdk-go v0.0.0 => ./src/grafana/grafana-plugin-sdk-go
 	gopkg.in/ldap.v3 v3.1.3 => github.com/go-ldap/ldap/v3 v3.1.3
-	gopkg.in/macaron.v1 v1.4.0 => ./pkg/macaron
 )
