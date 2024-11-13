@@ -215,5 +215,6 @@ replace (
 	github.com/go-macaron/binding => ./pkg/macaron/binding
 	github.com/grafana/grafana-aws-sdk v0.0.0 => ./src/grafana/grafana-aws-sdk
 	github.com/grafana/grafana-plugin-sdk-go v0.0.0 => ./src/grafana/grafana-plugin-sdk-go
+	gopkg.in/ldap.v3 v3.1.3 => github.com/go-ldap/ldap/v3 v3.1.3
 	gopkg.in/macaron.v1 v1.4.0 => ./pkg/macaron
 )
