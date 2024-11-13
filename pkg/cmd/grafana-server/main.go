@@ -31,7 +31,6 @@ import (
 	_ "github.com/myback/grafana/pkg/tsdb/opentsdb"
 	_ "github.com/myback/grafana/pkg/tsdb/postgres"
 	_ "github.com/myback/grafana/pkg/tsdb/prometheus"
-	_ "github.com/myback/grafana/pkg/tsdb/tempo"
 	_ "github.com/myback/grafana/pkg/tsdb/testdatasource"
 )
 
