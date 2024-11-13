@@ -3,6 +3,7 @@ package live
 import (
 	"fmt"
 	"sync"
+	"time"
 
 	"github.com/centrifugal/centrifuge"
 	"github.com/myback/grafana/pkg/api/routing"
@@ -68,7 +69,17 @@ func (g *GrafanaLive) Init() error {
 
 	// We use default config here as starting point. Default config contains
 	// reasonable values for available options.
-	cfg := centrifuge.DefaultConfig
+	cfg := centrifuge.Config{
+		ChannelMaxLength:                 255,
+		NodeInfoMetricsAggregateInterval: 60 * time.Second,
+		ClientPresenceUpdateInterval:     25 * time.Second,
+		ClientExpiredCloseDelay:          25 * time.Second,
+		ClientExpiredSubCloseDelay:       25 * time.Second,
+		ClientStaleCloseDelay:            25 * time.Second,
+		ClientChannelPositionCheckDelay:  40 * time.Second,
+		ClientQueueMaxSize:               10485760, // 10MB by default
+		ClientChannelLimit:               128,
+	}
 
 	// cfg.LogLevel = centrifuge.LogLevelDebug
 	cfg.LogHandler = handleLog
