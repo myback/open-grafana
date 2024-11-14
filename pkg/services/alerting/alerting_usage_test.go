@@ -2,6 +2,7 @@ package alerting
 
 import (
 	"encoding/json"
+	"os"
 	"testing"
 
 	"github.com/google/go-cmp/cmp"

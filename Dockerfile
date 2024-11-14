@@ -16,11 +16,11 @@ COPY emails emails
 ENV NODE_ENV production
 RUN yarn build
 
-FROM golang:1.16.1-alpine3.13 as go-builder
+FROM golang:1.23.3-alpine3.20 as go-builder
 
 RUN apk add --no-cache gcc g++
 
-WORKDIR $GOPATH/src/github.com/grafana/grafana
+WORKDIR $GOPATH/src/github.com/myback/grafana
 
 COPY go.mod go.sum ./
 

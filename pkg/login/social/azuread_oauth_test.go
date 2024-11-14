@@ -242,12 +242,12 @@ func TestSocialAzureAD_UserInfo(t *testing.T) {
 
 			var raw string
 			if tt.claims != nil {
-				raw, err = jwt.Signed(sig).Claims(cl).Claims(tt.claims).Serialize()
+				raw, err = jwt.Signed(sig).Claims(cl).Claims(tt.claims).CompactSerialize()
 				if err != nil {
 					t.Error(err)
 				}
 			} else {
-				raw, err = jwt.Signed(sig).Claims(cl).Serialize()
+				raw, err = jwt.Signed(sig).Claims(cl).CompactSerialize()
 				if err != nil {
 					t.Error(err)
 				}

@@ -1,6 +1,7 @@
 package plugins
 
 import (
+	"os"
 	"testing"
 
 	"github.com/myback/grafana/pkg/components/simplejson"

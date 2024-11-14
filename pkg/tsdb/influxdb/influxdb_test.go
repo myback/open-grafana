@@ -2,6 +2,7 @@ package influxdb
 
 import (
 	"context"
+	"io"
 	"net/url"
 	"testing"
 
