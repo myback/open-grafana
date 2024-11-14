@@ -26,8 +26,8 @@ const (
 	// "stackdriver" to avoid breaking changes in reporting.
 	DS_CLOUD_MONITORING = "stackdriver"
 	DS_AZURE_MONITOR    = "grafana-azure-monitor-datasource"
-	DS_LOKI             = "loki"
-	DS_ES_OPEN_DISTRO   = "grafana-es-open-distro-datasource"
+	//DS_LOKI             = "loki"
+	DS_ES_OPEN_DISTRO = "grafana-es-open-distro-datasource"
 )
 
 var (
@@ -90,20 +90,20 @@ func (ds *DataSource) decryptedValue(field string, fallback string) string {
 }
 
 var knownDatasourcePlugins = map[string]bool{
-	DS_ES:                                    true,
-	DS_GRAPHITE:                              true,
-	DS_INFLUXDB:                              true,
-	DS_INFLUXDB_08:                           true,
-	DS_KAIROSDB:                              true,
-	DS_CLOUDWATCH:                            true,
-	DS_PROMETHEUS:                            true,
-	DS_OPENTSDB:                              true,
-	DS_POSTGRES:                              true,
-	DS_MYSQL:                                 true,
-	DS_MSSQL:                                 true,
-	DS_CLOUD_MONITORING:                      true,
-	DS_AZURE_MONITOR:                         true,
-	DS_LOKI:                                  true,
+	DS_ES:               true,
+	DS_GRAPHITE:         true,
+	DS_INFLUXDB:         true,
+	DS_INFLUXDB_08:      true,
+	DS_KAIROSDB:         true,
+	DS_CLOUDWATCH:       true,
+	DS_PROMETHEUS:       true,
+	DS_OPENTSDB:         true,
+	DS_POSTGRES:         true,
+	DS_MYSQL:            true,
+	DS_MSSQL:            true,
+	DS_CLOUD_MONITORING: true,
+	DS_AZURE_MONITOR:    true,
+	//DS_LOKI:                                  true,
 	"opennms":                                true,
 	"abhisant-druid-datasource":              true,
 	"dalmatinerdb-datasource":                true,
@@ -125,7 +125,7 @@ var knownDatasourcePlugins = map[string]bool{
 	"grafana-influxdb-flux-datasource":       true,
 	"doitintl-bigquery-datasource":           true,
 	"grafana-azure-data-explorer-datasource": true,
-	"tempo":                                  true,
+	//"tempo":                                  true,
 }
 
 func IsKnownDataSourcePlugin(dsType string) bool {
