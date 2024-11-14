@@ -81,14 +81,7 @@ debug.test
 /packaging/**/*.deb
 /packaging/**/*.tar.gz
 
-# Ignore OSX indexing
-.DS_Store
-
-/vendor/**/*.py
-/vendor/**/*.xml
-/vendor/**/*.yml
-/vendor/**/*_test.go
-/vendor/**/.editorconfig
+/vendor
 *.orig
 
 /devenv/bulk-dashboards/*.json
