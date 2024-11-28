@@ -4,9 +4,9 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/setting"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -36,9 +36,9 @@ func TestEmailIntegrationTest(t *testing.T) {
 					"Severity":      "ok",
 					"SeverityColor": "#D63232",
 					"Message":       "Alert message that will support markdown in some distant future.",
-					"RuleUrl":       "http://localhost:3000/dashboard/db/graphite-dashboard",
-					"ImageLink":     "http://localhost:3000/render/dashboard-solo/db/graphite-dashboard?panelId=1&from=1471008499616&to=1471012099617&width=1000&height=500",
-					"AlertPageUrl":  "http://localhost:3000/alerting",
+					"RuleUrl":       "http://localhost:8080/dashboard/db/graphite-dashboard",
+					"ImageLink":     "http://localhost:8080/render/dashboard-solo/db/graphite-dashboard?panelId=1&from=1471008499616&to=1471012099617&width=1000&height=500",
+					"AlertPageUrl":  "http://localhost:8080/alerting",
 					"EmbeddedImage": "test.png",
 					"EvalMatches": []map[string]string{
 						{

@@ -5,8 +5,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/infra/metrics"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/infra/metrics"
 )
 
 // DefaultEvalHandler is responsible for evaluating the alert rule.

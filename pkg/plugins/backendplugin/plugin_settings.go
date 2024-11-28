@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/setting"
 )
 
 type pluginSettings map[string]string

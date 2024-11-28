@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/myback/grafana/pkg/components/null"
-	"github.com/myback/grafana/pkg/components/simplejson"
-	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/components/null"
+	"github.com/myback/open-grafana/pkg/components/simplejson"
+	"github.com/myback/open-grafana/pkg/models"
 )
 
 func formatShort(interval time.Duration) string {

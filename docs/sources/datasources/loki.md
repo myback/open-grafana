@@ -94,10 +94,10 @@ Loki supports Live tailing which displays logs in real-time. This feature is sup
 Note that Live Tailing relies on two Websocket connections: one between the browser and the Grafana server, and another between the Grafana server and the Loki server. If you run any reverse proxies, please configure them accordingly. The following example for Apache2 can be used for proxying between the browser and the Grafana server:
 
 ```
-ProxyPassMatch "^/(api/datasources/proxy/\d+/loki/api/v1/tail)" "ws://127.0.0.1:3000/$1"
+ProxyPassMatch "^/(api/datasources/proxy/\d+/loki/api/v1/tail)" "ws://127.0.0.1:8080/$1"
 ```
 
-The following example shows basic NGINX proxy configuration. It assumes that the Grafana server is available at `http://localhost:3000/`, Loki server is running locally without proxy, and your external site uses HTTPS. If you also host Loki behind NGINX proxy, then you might want to repeat the following configuration for Loki as well.
+The following example shows basic NGINX proxy configuration. It assumes that the Grafana server is available at `http://localhost:8080/`, Loki server is running locally without proxy, and your external site uses HTTPS. If you also host Loki behind NGINX proxy, then you might want to repeat the following configuration for Loki as well.
 
 In the `http` section of NGINX configuration, add the following map definition:
 
@@ -112,7 +112,7 @@ In your `server` section, add the following configuration:
 
 ```
   location ~ /(api/datasources/proxy/\d+/loki/api/v1/tail) {
-      proxy_pass          http://localhost:3000$request_uri;
+      proxy_pass          http://localhost:8080$request_uri;
       proxy_set_header    Host              $host;
       proxy_set_header    X-Real-IP         $remote_addr;
       proxy_set_header    X-Forwarded-for   $proxy_add_x_forwarded_for;
@@ -122,7 +122,7 @@ In your `server` section, add the following configuration:
   }
 
   location / {
-      proxy_pass          http://localhost:3000/;
+      proxy_pass          http://localhost:8080/;
       proxy_set_header    Host              $host;
       proxy_set_header    X-Real-IP         $remote_addr;
       proxy_set_header    X-Forwarded-for   $proxy_add_x_forwarded_for;

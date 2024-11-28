@@ -10,19 +10,19 @@ import (
 	"testing"
 	"time"
 
-	"github.com/myback/grafana/pkg/services/alerting"
-	"github.com/myback/grafana/pkg/services/licensing"
+	"github.com/myback/open-grafana/pkg/services/alerting"
+	"github.com/myback/open-grafana/pkg/services/licensing"
 	"github.com/stretchr/testify/require"
 
 	"net/http"
 	"net/http/httptest"
 
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/components/simplejson"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/plugins"
-	"github.com/myback/grafana/pkg/services/sqlstore"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/components/simplejson"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/plugins"
+	"github.com/myback/open-grafana/pkg/services/sqlstore"
+	"github.com/myback/open-grafana/pkg/setting"
 	"github.com/stretchr/testify/assert"
 )
 

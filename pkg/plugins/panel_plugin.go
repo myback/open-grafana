@@ -3,7 +3,7 @@ package plugins
 import (
 	"encoding/json"
 
-	"github.com/myback/grafana/pkg/plugins/backendplugin"
+	"github.com/myback/open-grafana/pkg/plugins/backendplugin"
 )
 
 type PanelPlugin struct {

@@ -4,8 +4,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/myback/grafana/pkg/cmd/grafana-cli/logger"
-	"github.com/myback/grafana/pkg/util/errutil"
+	"github.com/myback/open-grafana/pkg/cmd/grafana-cli/logger"
+	"github.com/myback/open-grafana/pkg/util/errutil"
 )
 
 func GetGrafanaPluginDir(currentOS string) string {

@@ -13,7 +13,7 @@ import (
 
 	"testing"
 
-	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/infra/log"
 	"golang.org/x/oauth2"
 )
 

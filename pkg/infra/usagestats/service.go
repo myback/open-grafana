@@ -5,15 +5,15 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/login/social"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/alerting"
-	"github.com/myback/grafana/pkg/services/sqlstore"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/login/social"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/alerting"
+	"github.com/myback/open-grafana/pkg/services/sqlstore"
 
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/registry"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/registry"
+	"github.com/myback/open-grafana/pkg/setting"
 )
 
 var metricsLogger log.Logger = log.New("metrics")

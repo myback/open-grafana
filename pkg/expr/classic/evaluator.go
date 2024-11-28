@@ -3,7 +3,7 @@ package classic
 import (
 	"fmt"
 
-	"github.com/myback/grafana/pkg/expr/mathexp"
+	"github.com/myback/open-grafana/pkg/expr/mathexp"
 )
 
 type evaluator interface {

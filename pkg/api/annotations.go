@@ -4,12 +4,12 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/myback/grafana/pkg/api/dtos"
-	"github.com/myback/grafana/pkg/api/response"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/annotations"
-	"github.com/myback/grafana/pkg/services/guardian"
-	"github.com/myback/grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/api/dtos"
+	"github.com/myback/open-grafana/pkg/api/response"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/annotations"
+	"github.com/myback/open-grafana/pkg/services/guardian"
+	"github.com/myback/open-grafana/pkg/util"
 )
 
 func GetAnnotations(c *models.ReqContext) response.Response {

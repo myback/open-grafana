@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/models"
 
 	"golang.org/x/oauth2"
 )

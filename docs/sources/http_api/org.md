@@ -333,7 +333,7 @@ Accept: application/json
 Content-Type: application/json
 ```
 Note: The api will only work when you pass the admin name and password
-to the request HTTP URL, like http://admin:admin@localhost:3000/api/orgs
+to the request HTTP URL, like http://admin:admin@localhost:8080/api/orgs
 
 Default value for the `perpage` parameter is `1000` and for the `page` parameter is `0`.
 
@@ -415,7 +415,7 @@ Accept: application/json
 Content-Type: application/json
 ```
 Note: The api will only work when you pass the admin name and password
-to the request HTTP URL, like http://admin:admin@localhost:3000/api/orgs/1/users
+to the request HTTP URL, like http://admin:admin@localhost:8080/api/orgs/1/users
 
 
 **Example Response**:

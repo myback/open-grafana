@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/myback/grafana/pkg/setting"
-	"github.com/myback/grafana/pkg/util/errutil"
+	"github.com/myback/open-grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/util/errutil"
 	redis "gopkg.in/redis.v5"
 )
 

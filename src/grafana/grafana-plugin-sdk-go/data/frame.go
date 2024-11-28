@@ -6,7 +6,7 @@
 // Frames can be encoded using Apache Arrow (https://arrow.apache.org/) for transmission.
 //
 // The corresponding Grafana frontend package the @grafana/data package
-// (https://github.com/myback/grafana/tree/master/packages/grafana-data).
+// (https://github.com/myback/open-grafana/tree/master/packages/grafana-data).
 package data
 
 import (

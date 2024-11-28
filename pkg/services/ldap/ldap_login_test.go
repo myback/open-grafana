@@ -7,8 +7,8 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 	"gopkg.in/ldap.v3"
 
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/models"
 )
 
 func TestLDAPLogin(t *testing.T) {

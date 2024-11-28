@@ -20,7 +20,7 @@ const getTestContext = (overides?: object) => {
     orgId: 1337,
     redirected: false,
     type: 'basic',
-    url: 'http://localhost:3000/api/some-mock',
+    url: 'http://localhost:8080/api/some-mock',
   };
   const props = { ...defaults, ...overides };
   const textMock = jest.fn().mockResolvedValue(JSON.stringify(props.data));
@@ -32,7 +32,7 @@ const getTestContext = (overides?: object) => {
       text: textMock,
       redirected: false,
       type: 'basic',
-      url: 'http://localhost:3000/api/some-mock',
+      url: 'http://localhost:8080/api/some-mock',
     };
     return of(mockedResponse);
   });
@@ -86,8 +86,8 @@ describe('backendSrv', () => {
   describe('parseRequestOptions', () => {
     it.each`
       retry        | url                                      | headers                           | orgId        | noBackendCache | expected
-      ${undefined} | ${'http://localhost:3000/api/dashboard'} | ${undefined}                      | ${undefined} | ${undefined}   | ${{ hideFromInspector: false, retry: 0, url: 'http://localhost:3000/api/dashboard' }}
-      ${1}         | ${'http://localhost:3000/api/dashboard'} | ${{ Authorization: 'Some Auth' }} | ${1}         | ${true}        | ${{ hideFromInspector: false, retry: 1, url: 'http://localhost:3000/api/dashboard', headers: { Authorization: 'Some Auth' } }}
+      ${undefined} | ${'http://localhost:8080/api/dashboard'} | ${undefined}                      | ${undefined} | ${undefined}   | ${{ hideFromInspector: false, retry: 0, url: 'http://localhost:8080/api/dashboard' }}
+      ${1}         | ${'http://localhost:8080/api/dashboard'} | ${{ Authorization: 'Some Auth' }} | ${1}         | ${true}        | ${{ hideFromInspector: false, retry: 1, url: 'http://localhost:8080/api/dashboard', headers: { Authorization: 'Some Auth' } }}
       ${undefined} | ${'api/dashboard'}                       | ${undefined}                      | ${undefined} | ${undefined}   | ${{ hideFromInspector: true, retry: 0, url: 'api/dashboard' }}
       ${undefined} | ${'/api/dashboard'}                      | ${undefined}                      | ${undefined} | ${undefined}   | ${{ hideFromInspector: true, retry: 0, url: 'api/dashboard' }}
       ${undefined} | ${'/api/dashboard/'}                     | ${undefined}                      | ${undefined} | ${undefined}   | ${{ hideFromInspector: true, retry: 0, url: 'api/dashboard/' }}

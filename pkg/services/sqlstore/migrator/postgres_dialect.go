@@ -8,7 +8,7 @@ import (
 
 	"github.com/lib/pq"
 
-	"github.com/myback/grafana/pkg/util/errutil"
+	"github.com/myback/open-grafana/pkg/util/errutil"
 	"xorm.io/xorm"
 )
 

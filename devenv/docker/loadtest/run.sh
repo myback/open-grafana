@@ -4,7 +4,7 @@ PWD=$(pwd)
 
 run() {
   duration='15m'
-  url='http://localhost:3000'
+  url='http://localhost:8080'
   vus='2'
   testcase='auth_token_test'
   slowQuery=''
@@ -28,7 +28,7 @@ run() {
         s)
             slowQuery=${OPTARG}
             ;;
-        o)  
+        o)
             out=${OPTARG}
             ;;
         k)

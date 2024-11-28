@@ -3,10 +3,10 @@ package dashboards
 import (
 	"errors"
 
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/guardian"
-	"github.com/myback/grafana/pkg/services/search"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/guardian"
+	"github.com/myback/open-grafana/pkg/services/search"
 )
 
 // FolderService service for operating on folders

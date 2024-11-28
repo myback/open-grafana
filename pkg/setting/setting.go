@@ -22,9 +22,9 @@ import (
 	ini "gopkg.in/ini.v1"
 
 	"github.com/grafana/grafana-aws-sdk/pkg/awsds"
-	"github.com/myback/grafana/pkg/components/gtime"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/components/gtime"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/util"
 )
 
 type Scheme string
@@ -398,7 +398,7 @@ type CommandLineArgs struct {
 }
 
 func parseAppUrlAndSubUrl(section *ini.Section) (string, string, error) {
-	appUrl := valueAsString(section, "root_url", "http://localhost:3000/")
+	appUrl := valueAsString(section, "root_url", "http://localhost:8080/")
 
 	if appUrl[len(appUrl)-1] != '/' {
 		appUrl += "/"
@@ -1387,7 +1387,7 @@ func (cfg *Cfg) readServerSettings(iniFile *ini.File) error {
 
 	cfg.Domain = valueAsString(server, "domain", "localhost")
 	HttpAddr = valueAsString(server, "http_addr", DefaultHTTPAddr)
-	HttpPort = valueAsString(server, "http_port", "3000")
+	HttpPort = valueAsString(server, "http_port", "8080")
 	cfg.RouterLogging = server.Key("router_logging").MustBool(false)
 
 	EnableGzip = server.Key("enable_gzip").MustBool(false)

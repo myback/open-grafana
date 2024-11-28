@@ -5,9 +5,9 @@ import (
 	"testing"
 
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/plugins/backendplugin"
-	"github.com/myback/grafana/pkg/plugins/backendplugin/coreplugin"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/plugins/backendplugin"
+	"github.com/myback/open-grafana/pkg/plugins/backendplugin/coreplugin"
 	"github.com/stretchr/testify/require"
 )
 

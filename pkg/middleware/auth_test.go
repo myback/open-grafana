@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/setting"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

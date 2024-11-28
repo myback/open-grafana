@@ -12,9 +12,9 @@ import (
 
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/myback/grafana/pkg/components/null"
-	"github.com/myback/grafana/pkg/components/simplejson"
-	"github.com/myback/grafana/pkg/util/errutil"
+	"github.com/myback/open-grafana/pkg/components/null"
+	"github.com/myback/open-grafana/pkg/components/simplejson"
+	"github.com/myback/open-grafana/pkg/util/errutil"
 )
 
 const (
@@ -607,7 +607,7 @@ func (p *testDataPlugin) handleLogsScenario(ctx context.Context, req *backend.Qu
 				lvlString = fmt.Sprintf("lvl=%s ", logLevel)
 			}
 
-			message := fmt.Sprintf("t=%s %smsg=\"Request Completed\" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/datasources/proxy/152/api/prom/label status=502 remote_addr=[::1] time_ms=1 size=0 referer=\"http://localhost:3000/explore?left=%%5B%%22now-6h%%22,%%22now%%22,%%22Prometheus%%202.x%%22,%%7B%%7D,%%7B%%22ui%%22:%%5Btrue,true,true,%%22none%%22%%5D%%7D%%5D\"", timeFormatted, lvlString)
+			message := fmt.Sprintf("t=%s %smsg=\"Request Completed\" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/datasources/proxy/152/api/prom/label status=502 remote_addr=[::1] time_ms=1 size=0 referer=\"http://localhost:8080/explore?left=%%5B%%22now-6h%%22,%%22now%%22,%%22Prometheus%%202.x%%22,%%7B%%7D,%%7B%%22ui%%22:%%5Btrue,true,true,%%22none%%22%%5D%%7D%%5D\"", timeFormatted, lvlString)
 			containerID := containerIDGenerator.Next()
 			hostname := hostnameGenerator.Next()
 

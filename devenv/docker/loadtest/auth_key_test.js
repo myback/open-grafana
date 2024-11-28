@@ -6,7 +6,7 @@ export let options = {
   noCookiesReset: true,
 };
 
-let endpoint = __ENV.URL || 'http://localhost:3000';
+let endpoint = __ENV.URL || 'http://localhost:8080';
 
 let apiKey = __ENV.API_KEY;
 if (!apiKey) {

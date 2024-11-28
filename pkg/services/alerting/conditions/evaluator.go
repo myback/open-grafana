@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/myback/grafana/pkg/components/null"
-	"github.com/myback/grafana/pkg/components/simplejson"
-	"github.com/myback/grafana/pkg/services/alerting"
+	"github.com/myback/open-grafana/pkg/components/null"
+	"github.com/myback/open-grafana/pkg/components/simplejson"
+	"github.com/myback/open-grafana/pkg/services/alerting"
 )
 
 var (

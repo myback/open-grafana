@@ -1,6 +1,6 @@
 package sqlstore
 
-import "github.com/myback/grafana/pkg/models"
+import "github.com/myback/open-grafana/pkg/models"
 
 // Will insert if needed any new key/value pars and return ids
 func EnsureTagsExist(sess *DBSession, tags []*models.Tag) ([]*models.Tag, error) {

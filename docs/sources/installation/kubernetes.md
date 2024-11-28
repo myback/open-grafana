@@ -106,9 +106,9 @@ spec:
 `kubectl apply -f grafana.yaml`
 
 1. Check that it worked by running the following:
-`kubectl port-forward service/grafana 3000:3000`
+`kubectl port-forward service/grafana 8080:8080`
 
-1. Navigate to `localhost:3000` in your browser. You should see a Grafana login page. 
+1. Navigate to `localhost:8080` in your browser. You should see a Grafana login page. 
 
 1. Use `admin` for both the username and password to login.
 
@@ -233,9 +233,9 @@ spec:
 `kubectl apply -f grafana.yaml`
 
 1. Check that it worked by running the following:
-`kubectl port-forward service/grafana 3000:3000`
+`kubectl port-forward service/grafana 8080:8080`
 
-1. Navigate to `localhost:3000` in your browser. You should see the Grafana login page. 
+1. Navigate to `localhost:8080` in your browser. You should see the Grafana login page. 
 
 1. Use `admin` for both the username and password to login.
 If it worked, you should see `Enterprise (Licensed)` at the bottom of the page. 

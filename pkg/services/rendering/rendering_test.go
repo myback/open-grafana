@@ -3,7 +3,7 @@ package rendering
 import (
 	"testing"
 
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/setting"
 	"github.com/stretchr/testify/require"
 )
 
@@ -23,20 +23,20 @@ func TestGetUrl(t *testing.T) {
 	t.Run("When renderer url not configured", func(t *testing.T) {
 		rs.Cfg.RendererUrl = ""
 		rs.domain = "localhost"
-		setting.HttpPort = "3000"
+		setting.HttpPort = "8080"
 
 		t.Run("And protocol HTTP configured should return expected path", func(t *testing.T) {
 			rs.Cfg.ServeFromSubPath = false
 			rs.Cfg.AppSubURL = ""
 			rs.Cfg.Protocol = setting.HTTPScheme
 			url := rs.getURL(path)
-			require.Equal(t, "http://localhost:3000/"+path+"&render=1", url)
+			require.Equal(t, "http://localhost:8080/"+path+"&render=1", url)
 
 			t.Run("And serve from sub path should return expected path", func(t *testing.T) {
 				rs.Cfg.ServeFromSubPath = true
 				rs.Cfg.AppSubURL = "/grafana"
 				url := rs.getURL(path)
-				require.Equal(t, "http://localhost:3000/grafana/"+path+"&render=1", url)
+				require.Equal(t, "http://localhost:8080/grafana/"+path+"&render=1", url)
 			})
 		})
 
@@ -45,7 +45,7 @@ func TestGetUrl(t *testing.T) {
 			rs.Cfg.AppSubURL = ""
 			rs.Cfg.Protocol = setting.HTTPSScheme
 			url := rs.getURL(path)
-			require.Equal(t, "https://localhost:3000/"+path+"&render=1", url)
+			require.Equal(t, "https://localhost:8080/"+path+"&render=1", url)
 		})
 
 		t.Run("And protocol HTTP2 configured should return expected path", func(t *testing.T) {
@@ -53,7 +53,7 @@ func TestGetUrl(t *testing.T) {
 			rs.Cfg.AppSubURL = ""
 			rs.Cfg.Protocol = setting.HTTP2Scheme
 			url := rs.getURL(path)
-			require.Equal(t, "https://localhost:3000/"+path+"&render=1", url)
+			require.Equal(t, "https://localhost:8080/"+path+"&render=1", url)
 		})
 	})
 }

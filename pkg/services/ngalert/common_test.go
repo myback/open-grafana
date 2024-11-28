@@ -7,13 +7,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/myback/grafana/pkg/api/routing"
+	"github.com/myback/open-grafana/pkg/api/routing"
 
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/registry"
-	"github.com/myback/grafana/pkg/services/ngalert/eval"
-	"github.com/myback/grafana/pkg/services/sqlstore"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/registry"
+	"github.com/myback/open-grafana/pkg/services/ngalert/eval"
+	"github.com/myback/open-grafana/pkg/services/sqlstore"
+	"github.com/myback/open-grafana/pkg/setting"
 	"github.com/stretchr/testify/require"
 )
 

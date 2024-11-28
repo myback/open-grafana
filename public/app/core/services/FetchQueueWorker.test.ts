@@ -8,8 +8,8 @@ import { GrafanaBootConfig } from '@grafana/runtime';
 
 const getTestContext = (http2Enabled = false) => {
   const config: GrafanaBootConfig = ({ http2Enabled } as unknown) as GrafanaBootConfig;
-  const dataUrl = 'http://localhost:3000/api/ds/query?=abc';
-  const apiUrl = 'http://localhost:3000/api/alerts?state=all';
+  const dataUrl = 'http://localhost:8080/api/ds/query?=abc';
+  const apiUrl = 'http://localhost:8080/api/alerts?state=all';
   const updates: Subject<FetchQueueUpdate> = new Subject<FetchQueueUpdate>();
 
   const queueMock: FetchQueue = ({
@@ -55,8 +55,8 @@ describe('FetchQueueWorker', () => {
           });
 
           expect(addMock.mock.calls).toEqual([
-            ['api', { url: 'http://localhost:3000/api/alerts?state=all' }],
-            ['data', { url: 'http://localhost:3000/api/ds/query?=abc' }],
+            ['api', { url: 'http://localhost:8080/api/alerts?state=all' }],
+            ['data', { url: 'http://localhost:8080/api/ds/query?=abc' }],
           ]);
         });
       });
@@ -73,7 +73,7 @@ describe('FetchQueueWorker', () => {
             },
           });
 
-          expect(addMock.mock.calls).toEqual([['api', { url: 'http://localhost:3000/api/alerts?state=all' }]]);
+          expect(addMock.mock.calls).toEqual([['api', { url: 'http://localhost:8080/api/alerts?state=all' }]]);
         });
       });
 
@@ -89,7 +89,7 @@ describe('FetchQueueWorker', () => {
             },
           });
 
-          expect(addMock.mock.calls).toEqual([['api', { url: 'http://localhost:3000/api/alerts?state=all' }]]);
+          expect(addMock.mock.calls).toEqual([['api', { url: 'http://localhost:8080/api/alerts?state=all' }]]);
         });
       });
     });

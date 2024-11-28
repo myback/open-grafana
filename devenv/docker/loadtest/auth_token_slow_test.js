@@ -6,7 +6,7 @@ export let options = {
   noCookiesReset: true,
 };
 
-let endpoint = __ENV.URL || 'http://localhost:3000';
+let endpoint = __ENV.URL || 'http://localhost:8080';
 const slowQuery = __ENV.SLOW_QUERY && __ENV.SLOW_QUERY.length > 0 ? parseInt(__ENV.SLOW_QUERY, 10) : 5;
 const client = createClient(endpoint);
 

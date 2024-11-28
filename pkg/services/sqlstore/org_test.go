@@ -9,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/setting"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

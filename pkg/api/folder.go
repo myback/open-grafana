@@ -4,14 +4,14 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/myback/grafana/pkg/services/librarypanels"
+	"github.com/myback/open-grafana/pkg/services/librarypanels"
 
-	"github.com/myback/grafana/pkg/api/dtos"
-	"github.com/myback/grafana/pkg/api/response"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/dashboards"
-	"github.com/myback/grafana/pkg/services/guardian"
-	"github.com/myback/grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/api/dtos"
+	"github.com/myback/open-grafana/pkg/api/response"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/dashboards"
+	"github.com/myback/open-grafana/pkg/services/guardian"
+	"github.com/myback/open-grafana/pkg/util"
 )
 
 func GetFolders(c *models.ReqContext) response.Response {

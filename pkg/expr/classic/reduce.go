@@ -5,7 +5,7 @@ import (
 	"sort"
 
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/myback/grafana/pkg/expr/mathexp"
+	"github.com/myback/open-grafana/pkg/expr/mathexp"
 )
 
 func nilOrNaN(f *float64) bool {

@@ -11,12 +11,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/myback/grafana/pkg/services/validations"
+	"github.com/myback/open-grafana/pkg/services/validations"
 
 	"github.com/grafana/grafana-aws-sdk/pkg/sigv4"
 	"github.com/mwitkow/go-conntrack"
-	"github.com/myback/grafana/pkg/infra/metrics/metricutil"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/infra/metrics/metricutil"
+	"github.com/myback/open-grafana/pkg/setting"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )

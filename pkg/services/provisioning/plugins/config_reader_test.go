@@ -4,8 +4,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/plugins"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/plugins"
 	"github.com/stretchr/testify/require"
 )
 

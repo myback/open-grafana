@@ -9,9 +9,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/myback/grafana/pkg/infra/fs"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/infra/fs"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/models"
 )
 
 var validateCertFunc = validateCertFilePaths

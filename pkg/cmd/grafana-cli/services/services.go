@@ -10,8 +10,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/myback/grafana/pkg/cmd/grafana-cli/logger"
-	"github.com/myback/grafana/pkg/cmd/grafana-cli/models"
+	"github.com/myback/open-grafana/pkg/cmd/grafana-cli/logger"
+	"github.com/myback/open-grafana/pkg/cmd/grafana-cli/models"
 )
 
 var (

@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/infra/log"
 )
 
 var tlslog = log.New("tls_mysql")

@@ -2,10 +2,10 @@ package api
 
 import (
 	"github.com/getsentry/sentry-go"
-	"github.com/myback/grafana/pkg/api/frontendlogging"
-	"github.com/myback/grafana/pkg/api/response"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/api/frontendlogging"
+	"github.com/myback/open-grafana/pkg/api/response"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/models"
 )
 
 var frontendLogger = log.New("frontend")

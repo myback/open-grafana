@@ -111,7 +111,7 @@ Configure your `docker-compose.yml` file. For example:
 grafana:
   image: grafana/grafana:latest
   ports:
-    - "3000:3000"
+    - "8080:8080"
   environment:
     - TERM=linux
     - GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-piechart-panel,grafana-polystat-panel

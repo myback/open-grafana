@@ -6,11 +6,11 @@ import (
 	"fmt"
 
 	"github.com/grafana/grafana-plugin-model/go/datasource"
-	"github.com/myback/grafana/pkg/components/null"
-	"github.com/myback/grafana/pkg/components/simplejson"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/tsdb"
+	"github.com/myback/open-grafana/pkg/components/null"
+	"github.com/myback/open-grafana/pkg/components/simplejson"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/tsdb"
 )
 
 func NewDatasourcePluginWrapper(log log.Logger, plugin datasource.DatasourcePlugin) *DatasourcePluginWrapper {

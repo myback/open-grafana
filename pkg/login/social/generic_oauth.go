@@ -12,8 +12,8 @@ import (
 	"net/mail"
 	"regexp"
 
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/util/errutil"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/util/errutil"
 	"golang.org/x/oauth2"
 )
 

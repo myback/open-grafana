@@ -7,7 +7,7 @@ import (
 	"runtime"
 
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/myback/grafana/pkg/expr/mathexp/parse"
+	"github.com/myback/open-grafana/pkg/expr/mathexp/parse"
 )
 
 // Expr holds a parsed math command expression.

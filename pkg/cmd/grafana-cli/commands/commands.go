@@ -3,14 +3,14 @@ package commands
 import (
 	"strings"
 
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/cmd/grafana-cli/commands/datamigrations"
-	"github.com/myback/grafana/pkg/cmd/grafana-cli/logger"
-	"github.com/myback/grafana/pkg/cmd/grafana-cli/services"
-	"github.com/myback/grafana/pkg/cmd/grafana-cli/utils"
-	"github.com/myback/grafana/pkg/services/sqlstore"
-	"github.com/myback/grafana/pkg/setting"
-	"github.com/myback/grafana/pkg/util/errutil"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/cmd/grafana-cli/commands/datamigrations"
+	"github.com/myback/open-grafana/pkg/cmd/grafana-cli/logger"
+	"github.com/myback/open-grafana/pkg/cmd/grafana-cli/services"
+	"github.com/myback/open-grafana/pkg/cmd/grafana-cli/utils"
+	"github.com/myback/open-grafana/pkg/services/sqlstore"
+	"github.com/myback/open-grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/util/errutil"
 	"github.com/urfave/cli/v2"
 )
 

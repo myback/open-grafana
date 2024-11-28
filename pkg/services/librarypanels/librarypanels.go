@@ -3,14 +3,14 @@ package librarypanels
 import (
 	"fmt"
 
-	"github.com/myback/grafana/pkg/api/routing"
-	"github.com/myback/grafana/pkg/components/simplejson"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/registry"
-	"github.com/myback/grafana/pkg/services/sqlstore"
-	"github.com/myback/grafana/pkg/services/sqlstore/migrator"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/api/routing"
+	"github.com/myback/open-grafana/pkg/components/simplejson"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/registry"
+	"github.com/myback/open-grafana/pkg/services/sqlstore"
+	"github.com/myback/open-grafana/pkg/services/sqlstore/migrator"
+	"github.com/myback/open-grafana/pkg/setting"
 )
 
 // LibraryPanelService is the service for the Panel Library feature.

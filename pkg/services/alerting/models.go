@@ -3,7 +3,7 @@ package alerting
 import (
 	"sync"
 
-	"github.com/myback/grafana/pkg/components/null"
+	"github.com/myback/open-grafana/pkg/components/null"
 )
 
 // Job holds state about when the alert rule should be evaluated.

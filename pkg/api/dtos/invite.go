@@ -1,6 +1,6 @@
 package dtos
 
-import "github.com/myback/grafana/pkg/models"
+import "github.com/myback/open-grafana/pkg/models"
 
 type AddInviteForm struct {
 	LoginOrEmail string          `json:"loginOrEmail" binding:"Required"`

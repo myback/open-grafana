@@ -9,9 +9,9 @@ import (
 
 	macaron "gopkg.in/macaron.v1"
 
-	"github.com/myback/grafana/pkg/middleware/cookies"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/middleware/cookies"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/setting"
 )
 
 type AuthOptions struct {

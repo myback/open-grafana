@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/centrifugal/centrifuge"
-	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/models"
 )
 
 // testDataRunner manages all the `grafana/dashboard/*` channels.

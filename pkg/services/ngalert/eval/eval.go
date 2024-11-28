@@ -7,11 +7,11 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/setting"
 
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/myback/grafana/pkg/expr"
+	"github.com/myback/open-grafana/pkg/expr"
 )
 
 const alertingEvaluationTimeout = 30 * time.Second

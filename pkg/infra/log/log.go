@@ -13,8 +13,8 @@ import (
 	"github.com/go-stack/stack"
 	"github.com/inconshreveable/log15"
 	isatty "github.com/mattn/go-isatty"
-	"github.com/myback/grafana/pkg/util"
-	"github.com/myback/grafana/pkg/util/errutil"
+	"github.com/myback/open-grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/util/errutil"
 	"gopkg.in/ini.v1"
 )
 

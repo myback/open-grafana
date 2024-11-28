@@ -10,7 +10,7 @@ Be sure that you've read the [generalized E2E document](e2e.md).
 Your running Grafana instance can be targeted by setting the `CYPRESS_BASE_URL`, `CYPRESS_USERNAME` and `CYPRESS_PASSWORD` environment variableS:
 
 ```shell
-CYPRESS_BASE_URL=https://localhost:3000 CYPRESS_USERNAME=admin CYPRESS_PASSWORD=admin yarn test:e2e
+CYPRESS_BASE_URL=https://localhost:8080 CYPRESS_USERNAME=admin CYPRESS_PASSWORD=admin yarn test:e2e
 ```
 
 ## Test suites

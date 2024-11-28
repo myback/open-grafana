@@ -8,7 +8,7 @@ import (
 
 	"time"
 
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/setting"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

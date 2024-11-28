@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
-	"github.com/myback/grafana/pkg/expr"
+	"github.com/myback/open-grafana/pkg/expr"
 )
 
 const defaultMaxDataPoints float64 = 100

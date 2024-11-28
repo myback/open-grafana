@@ -2,8 +2,8 @@ package features
 
 import (
 	"github.com/centrifugal/centrifuge"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/models"
 )
 
 var (

@@ -1,6 +1,6 @@
 package migrations
 
-import . "github.com/myback/grafana/pkg/services/sqlstore/migrator"
+import . "github.com/myback/open-grafana/pkg/services/sqlstore/migrator"
 
 func addPlaylistMigrations(mg *Migrator) {
 	mg.AddMigration("Drop old table playlist table", NewDropTableMigration("playlist"))

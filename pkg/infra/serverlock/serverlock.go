@@ -4,9 +4,9 @@ import (
 	"context"
 	"time"
 
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/registry"
-	"github.com/myback/grafana/pkg/services/sqlstore"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/registry"
+	"github.com/myback/open-grafana/pkg/services/sqlstore"
 )
 
 func init() {

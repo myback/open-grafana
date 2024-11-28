@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/setting"
 	"github.com/stretchr/testify/require"
 )
 
@@ -208,7 +208,7 @@ func TestQuotaCommandsAndQueries(t *testing.T) {
 		require.Equal(t, int64(0), query.Result.Used)
 	})
 
-	// related: https://github.com/myback/grafana/issues/14342
+	// related: https://github.com/myback/open-grafana/issues/14342
 	t.Run("Should org quota updating is successful even if it called multiple time", func(t *testing.T) {
 		orgCmd := models.UpdateOrgQuotaCmd{
 			OrgId:  orgId,
@@ -240,7 +240,7 @@ func TestQuotaCommandsAndQueries(t *testing.T) {
 		require.Equal(t, int64(10), query.Result.Limit)
 	})
 
-	// related: https://github.com/myback/grafana/issues/14342
+	// related: https://github.com/myback/open-grafana/issues/14342
 	t.Run("Should user quota updating is successful even if it called multiple time", func(t *testing.T) {
 		userQuotaCmd := models.UpdateUserQuotaCmd{
 			UserId: userId,

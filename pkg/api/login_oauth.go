@@ -13,14 +13,14 @@ import (
 
 	"golang.org/x/oauth2"
 
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/infra/metrics"
-	"github.com/myback/grafana/pkg/login"
-	"github.com/myback/grafana/pkg/login/social"
-	"github.com/myback/grafana/pkg/middleware/cookies"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/infra/metrics"
+	"github.com/myback/open-grafana/pkg/login"
+	"github.com/myback/open-grafana/pkg/login/social"
+	"github.com/myback/open-grafana/pkg/middleware/cookies"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/setting"
 )
 
 var (

@@ -46,7 +46,7 @@ These instructions assume you have already added Prometheus as a data source in 
    basic_auth_password =
    ```
 
-1. Restart Grafana. Grafana now exposes metrics at http://localhost:3000/metrics.
+1. Restart Grafana. Grafana now exposes metrics at http://localhost:8080/metrics.
 1. Add the job to your prometheus.yml file.
    Example:
 
@@ -57,7 +57,7 @@ These instructions assume you have already added Prometheus as a data source in 
       scrape_timeout: 5s
 
       static_configs:
-        - targets: ['localhost:3000']
+        - targets: ['localhost:8080']
    ```
 1. Restart Prometheus. Your new job should appear on the Targets tab.
 1. In Grafana, hover your mouse over the **Configuration** (gear) icon on the left sidebar and then click **Data Sources**.
@@ -89,4 +89,4 @@ These instructions assume you have already added Graphite as a data source in Gr
    prefix = prod.grafana.%(instance_name)s.
    ```
 
-1. Restart Grafana. Grafana now exposes metrics at http://localhost:3000/metrics and sends them to the Graphite location you specified.
+1. Restart Grafana. Grafana now exposes metrics at http://localhost:8080/metrics and sends them to the Graphite location you specified.

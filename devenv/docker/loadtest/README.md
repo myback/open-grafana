@@ -11,7 +11,7 @@ enable auth proxy together with configuring Grafana for auth proxy.
 
 ## Run
 
-Run load test for 15 minutes using 2 virtual users and targeting http://localhost:3000.
+Run load test for 15 minutes using 2 virtual users and targeting http://localhost:8080.
 
 ```bash
 $ ./run.sh

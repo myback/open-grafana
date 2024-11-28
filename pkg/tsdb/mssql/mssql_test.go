@@ -8,12 +8,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/myback/grafana/pkg/components/securejsondata"
-	"github.com/myback/grafana/pkg/components/simplejson"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/sqlstore/sqlutil"
-	"github.com/myback/grafana/pkg/tsdb"
-	"github.com/myback/grafana/pkg/tsdb/sqleng"
+	"github.com/myback/open-grafana/pkg/components/securejsondata"
+	"github.com/myback/open-grafana/pkg/components/simplejson"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/sqlstore/sqlutil"
+	"github.com/myback/open-grafana/pkg/tsdb"
+	"github.com/myback/open-grafana/pkg/tsdb/sqleng"
 	. "github.com/smartystreets/goconvey/convey"
 	"xorm.io/xorm"
 )

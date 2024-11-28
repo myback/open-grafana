@@ -8,10 +8,10 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/alerting"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/alerting"
 )
 
 const pushoverEndpoint = "https://api.pushover.net/1/messages.json"

@@ -12,8 +12,8 @@ import (
 	"github.com/go-sourcemap/sourcemap"
 
 	"github.com/getsentry/sentry-go"
-	"github.com/myback/grafana/pkg/plugins"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/plugins"
+	"github.com/myback/open-grafana/pkg/setting"
 )
 
 type sourceMapLocation struct {

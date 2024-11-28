@@ -68,7 +68,7 @@ Build and run the backend by running `make run` in the root directory of the rep
 
 > Are you having problems with [too many open files](#troubleshooting)?
 
-By default, you can access the web server at `http://localhost:3000/`.
+By default, you can access the web server at `http://localhost:8080/`.
 
 Log in using the default credentials:
 

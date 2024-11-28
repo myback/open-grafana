@@ -343,7 +343,7 @@ func ExampleFrame_tableLikeLongTimeSeries() {
 
 	// Presently the backend supports converting Long formatted series to "Wide" format
 	// which the frontend understands. Goal is frontend support eventually
-	// (https://github.com/myback/grafana/issues/22219).
+	// (https://github.com/myback/open-grafana/issues/22219).
 
 	type aTable struct {
 		Headers []string

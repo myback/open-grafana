@@ -12,9 +12,9 @@ import (
 
 	"golang.org/x/oauth2"
 
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/setting"
-	"github.com/myback/grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/util"
 )
 
 var (

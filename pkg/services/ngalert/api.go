@@ -5,15 +5,15 @@ import (
 
 	"github.com/go-macaron/binding"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/myback/grafana/pkg/api/response"
-	"github.com/myback/grafana/pkg/api/routing"
-	"github.com/myback/grafana/pkg/middleware"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/datasources"
-	"github.com/myback/grafana/pkg/services/ngalert/eval"
-	"github.com/myback/grafana/pkg/setting"
-	"github.com/myback/grafana/pkg/tsdb"
-	"github.com/myback/grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/api/response"
+	"github.com/myback/open-grafana/pkg/api/routing"
+	"github.com/myback/open-grafana/pkg/middleware"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/datasources"
+	"github.com/myback/open-grafana/pkg/services/ngalert/eval"
+	"github.com/myback/open-grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/tsdb"
+	"github.com/myback/open-grafana/pkg/util"
 )
 
 type apiImpl struct {

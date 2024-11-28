@@ -35,7 +35,7 @@ You can run the latest Grafana version, run a specific version, or run an unstab
 > **Note:** If you are on a Linux system, you might need to add `sudo` before the command.
 
 ```bash
-docker run -d -p 3000:3000 grafana/grafana
+docker run -d -p 8080:8080 grafana/grafana
 ```
 
 ### Run a specific version of Grafana
@@ -43,12 +43,12 @@ docker run -d -p 3000:3000 grafana/grafana
 > **Note:** If you are on a Linux system, you might need to add `sudo` before the command.
 
 ```bash
-docker run -d -p 3000:3000 --name grafana grafana/grafana:<version number>
+docker run -d -p 8080:8080 --name grafana grafana/grafana:<version number>
 ```
 
 **Example:**
 ```bash
-docker run -d -p 3000:3000 --name grafana grafana/grafana:6.5.0
+docker run -d -p 8080:8080 --name grafana grafana/grafana:6.5.0
 ```
 
 ### Run the Grafana master branch
@@ -69,7 +69,7 @@ Pass the plugins you want installed to Docker with the `GF_INSTALL_PLUGINS` envi
 
 ```bash
 docker run -d \
-  -p 3000:3000 \
+  -p 8080:8080 \
   --name=grafana \
   -e "GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource" \
   grafana/grafana
@@ -85,7 +85,7 @@ You can install plugins from custom URLs by specifying the URL like this: `GF_IN
 
 ```bash
 docker run -d \
-  -p 3000:3000 \
+  -p 8080:8080 \
   --name=grafana \
   -e "GF_INSTALL_PLUGINS=http://plugin-domain.com/my-custom-plugin.zip;custom-plugin" \
   grafana/grafana
@@ -109,7 +109,7 @@ docker build \
   --build-arg "GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource" \
   -t grafana-custom -f Dockerfile .
 
-docker run -d -p 3000:3000 --name=grafana grafana-custom
+docker run -d -p 8080:8080 --name=grafana grafana-custom
 ```
 
 ### Build with pre-installed plugins from other sources
@@ -123,7 +123,7 @@ docker build \
   --build-arg "GF_INSTALL_PLUGINS=http://plugin-domain.com/my-custom-plugin.zip;custom-plugin,grafana-clock-panel" \
   -t grafana-custom -f Dockerfile .
 
-docker run -d -p 3000:3000 --name=grafana grafana-custom
+docker run -d -p 8080:8080 --name=grafana grafana-custom
 ```
 
 Replace `Dockerfile` in above example with `ubuntu.Dockerfile` to build a custom Ubuntu based image (Grafana v6.5+).
@@ -142,7 +142,7 @@ docker build \
   --build-arg "GF_INSTALL_IMAGE_RENDERER_PLUGIN=true" \
   -t grafana-custom -f Dockerfile .
 
-docker run -d -p 3000:3000 --name=grafana grafana-custom
+docker run -d -p 8080:8080 --name=grafana grafana-custom
 ```
 
 Replace `Dockerfile` in above example with `ubuntu.Dockerfile` to build a custom Ubuntu-based image (Grafana v6.5+).
@@ -211,7 +211,7 @@ services:
   grafana:
     image: grafana/grafana:5.1.0
     ports:
-      - 3000:3000
+      - 8080:8080
     user: "104"
 ```
 

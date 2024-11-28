@@ -9,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/myback/grafana/pkg/registry"
-	"github.com/myback/grafana/pkg/services/ngalert/eval"
+	"github.com/myback/open-grafana/pkg/registry"
+	"github.com/myback/open-grafana/pkg/services/ngalert/eval"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

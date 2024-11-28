@@ -6,12 +6,12 @@ import (
 	"net/http/httputil"
 	"net/url"
 
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/plugins"
-	"github.com/myback/grafana/pkg/setting"
-	"github.com/myback/grafana/pkg/util"
-	"github.com/myback/grafana/pkg/util/proxyutil"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/plugins"
+	"github.com/myback/open-grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/util/proxyutil"
 )
 
 type templateData struct {

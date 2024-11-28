@@ -5,11 +5,11 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/myback/grafana/pkg/api/dtos"
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/plugins"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/api/dtos"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/plugins"
+	"github.com/myback/open-grafana/pkg/setting"
 )
 
 const (

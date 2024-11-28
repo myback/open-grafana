@@ -293,7 +293,7 @@
                 "value": [
                   {
                     "title": "filter",
-                    "url": "http://localhost:3000/d/-Y-tnEDWk/templating-nested-template-variables?var-datacenter=${__data.fields[datacenter]}﻿&var-server=${__value.raw}"
+                    "url": "http://localhost:8080/d/-Y-tnEDWk/templating-nested-template-variables?var-datacenter=${__data.fields[datacenter]}﻿&var-server=${__value.raw}"
                   }
                 ]
               }

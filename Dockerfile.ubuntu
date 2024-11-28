@@ -33,7 +33,7 @@ RUN go run build.go build
 FROM ubuntu:20.04
 
 LABEL maintainer="Grafana team <hello@grafana.com>"
-EXPOSE 3000
+EXPOSE 8080
 
 ARG GF_UID="472"
 ARG GF_GID="472"

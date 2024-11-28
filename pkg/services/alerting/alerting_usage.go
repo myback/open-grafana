@@ -3,7 +3,7 @@ package alerting
 import (
 	"encoding/json"
 
-	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/models"
 )
 
 // DatasourceAlertUsage is a hash where the key represents the

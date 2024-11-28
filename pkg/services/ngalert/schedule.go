@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/benbjohnson/clock"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/services/alerting"
-	"github.com/myback/grafana/pkg/services/ngalert/eval"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/services/alerting"
+	"github.com/myback/open-grafana/pkg/services/ngalert/eval"
 	"golang.org/x/sync/errgroup"
 )
 

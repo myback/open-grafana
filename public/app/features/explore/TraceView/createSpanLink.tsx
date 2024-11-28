@@ -5,7 +5,7 @@ import { SplitOpen } from 'app/types/explore';
 import { TraceToLogsOptions } from 'app/core/components/TraceToLogsSettings';
 import { getDatasourceSrv } from 'app/features/plugins/datasource_srv';
 import React from 'react';
-import { LokiQuery } from '../../../plugins/datasource/loki/types';
+import { LokiQuery } from '../../../../legacy/loki/types';
 import { TraceSpan } from '@jaegertracing/jaeger-ui-components';
 
 /**

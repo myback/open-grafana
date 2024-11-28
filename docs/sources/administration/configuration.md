@@ -190,7 +190,7 @@ The IP address to bind to. If empty will bind to all interfaces
 
 ### http_port
 
-The port to bind to, defaults to `3000`. To use port 80 you need to either give the Grafana binary permission for example:
+The port to bind to, defaults to `8080`. To use port 80 you need to either give the Grafana binary permission for example:
 
 ```bash
 $ sudo setcap 'cap_net_bind_service=+ep' /usr/sbin/grafana-server
@@ -199,7 +199,7 @@ $ sudo setcap 'cap_net_bind_service=+ep' /usr/sbin/grafana-server
 Or redirect port 80 to the Grafana port using:
 
 ```bash
-$ sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000
+$ sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
 ```
 
 Another way is put a webserver like Nginx or Apache in front of Grafana and have them proxy requests to Grafana.
@@ -227,8 +227,8 @@ callback URL to be correct).
 Serve Grafana from subpath specified in `root_url` setting. By default it is set to `false` for compatibility reasons.
 
 By enabling this setting and using a subpath in `root_url` above, e.g.
-`root_url = http://localhost:3000/grafana`, Grafana is accessible on
-`http://localhost:3000/grafana`.
+`root_url = http://localhost:8080/grafana`, Grafana is accessible on
+`http://localhost:8080/grafana`.
 
 ### router_logging
 

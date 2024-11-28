@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/ngalert/eval"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/ngalert/eval"
 )
 
 const alertDefinitionMaxTitleLength = 190

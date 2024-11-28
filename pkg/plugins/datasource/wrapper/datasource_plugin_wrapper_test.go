@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/grafana/grafana-plugin-model/go/datasource"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/tsdb"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/tsdb"
 	"github.com/stretchr/testify/require"
 )
 

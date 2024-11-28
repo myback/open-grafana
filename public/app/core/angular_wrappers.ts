@@ -1,7 +1,4 @@
 import { react2AngularDirective } from 'app/core/utils/react2angular';
-import { QueryEditor as CloudMonitoringQueryEditor } from 'app/plugins/datasource/cloud-monitoring/components/QueryEditor';
-import { AnnotationQueryEditor as CloudMonitoringAnnotationQueryEditor } from 'app/plugins/datasource/cloud-monitoring/components/AnnotationQueryEditor';
-import { AnnotationQueryEditor as CloudWatchAnnotationQueryEditor } from 'app/plugins/datasource/cloudwatch/components/AnnotationQueryEditor';
 import PageHeader from './components/PageHeader/PageHeader';
 import EmptyListCTA from './components/EmptyListCTA/EmptyListCTA';
 import { TagFilter } from './components/TagFilter/TagFilter';
@@ -20,7 +17,6 @@ import {
   UnitPicker,
 } from '@grafana/ui';
 import { FunctionEditor } from 'app/plugins/datasource/graphite/FunctionEditor';
-import { LokiAnnotationsQueryEditor } from '../plugins/datasource/loki/components/AnnotationsQueryEditor';
 import { HelpModal } from './components/help/HelpModal';
 import { Footer } from './components/Footer/Footer';
 import { FolderPicker } from 'app/core/components/Select/FolderPicker';
@@ -114,25 +110,6 @@ export function registerAngularDirectives() {
     'placeholder',
     ['variables', { watchDepth: 'reference' }],
   ]);
-  react2AngularDirective('cloudMonitoringQueryEditor', CloudMonitoringQueryEditor, [
-    'target',
-    'onQueryChange',
-    'onExecuteQuery',
-    ['events', { watchDepth: 'reference' }],
-    ['datasource', { watchDepth: 'reference' }],
-    ['templateSrv', { watchDepth: 'reference' }],
-  ]);
-  react2AngularDirective('cloudMonitoringAnnotationQueryEditor', CloudMonitoringAnnotationQueryEditor, [
-    'target',
-    'onQueryChange',
-    ['datasource', { watchDepth: 'reference' }],
-    ['templateSrv', { watchDepth: 'reference' }],
-  ]);
-  react2AngularDirective('cloudwatchAnnotationQueryEditor', CloudWatchAnnotationQueryEditor, [
-    'query',
-    'onChange',
-    ['datasource', { watchDepth: 'reference' }],
-  ]);
   react2AngularDirective('secretFormField', SecretFormField, [
     'value',
     'isConfigured',
@@ -159,13 +136,6 @@ export function registerAngularDirectives() {
     ['onChange', { watchDepth: 'reference', wrapApply: true }],
   ]);
 
-  react2AngularDirective('lokiAnnotationsQueryEditor', LokiAnnotationsQueryEditor, [
-    'expr',
-    'maxLines',
-    'instant',
-    'onChange',
-    ['datasource', { watchDepth: 'reference' }],
-  ]);
   react2AngularDirective('datasourceHttpSettingsNext', DataSourceHttpSettings, [
     'defaultUrl',
     'showAccessOptions',

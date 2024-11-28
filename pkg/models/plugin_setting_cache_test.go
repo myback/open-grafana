@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/myback/grafana/pkg/components/securejsondata"
+	"github.com/myback/open-grafana/pkg/components/securejsondata"
 )
 
 // clearPluginSettingDecryptionCache clears the datasource decryption cache.

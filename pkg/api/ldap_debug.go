@@ -5,14 +5,14 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/myback/grafana/pkg/api/response"
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/login"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/ldap"
-	"github.com/myback/grafana/pkg/services/multildap"
-	"github.com/myback/grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/api/response"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/login"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/ldap"
+	"github.com/myback/open-grafana/pkg/services/multildap"
+	"github.com/myback/open-grafana/pkg/util"
 )
 
 var (

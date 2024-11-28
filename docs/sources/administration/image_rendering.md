@@ -60,10 +60,10 @@ services:
   grafana:
     image: grafana/grafana:master
     ports:
-     - "3000:3000"
+     - "8080:8080"
     environment:
       GF_RENDERING_SERVER_URL: http://renderer:8081/render
-      GF_RENDERING_CALLBACK_URL: http://grafana:3000/
+      GF_RENDERING_CALLBACK_URL: http://grafana:8080/
       GF_LOG_FILTERS: rendering:debug
   renderer:
     image: grafana/grafana-image-renderer:latest
@@ -100,7 +100,7 @@ The following example describes how to build and run the remote HTTP rendering s
     ```
     [rendering]
     server_url = http://localhost:8081/render
-    callback_url = http://localhost:3000/
+    callback_url = http://localhost:8080/
     ```
 
 1. Restart Grafana.

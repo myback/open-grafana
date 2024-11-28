@@ -1,8 +1,8 @@
 package alerting
 
 import (
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/models"
 )
 
 func init() {

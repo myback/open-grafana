@@ -4,16 +4,13 @@ import (
 	"context"
 	"fmt"
 	"regexp"
-	"time"
 
-	"github.com/myback/grafana/pkg/components/imguploader/gcs"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/setting"
 )
 
 const (
-	pngExt                        = ".png"
-	defaultGCSSignedURLExpiration = 7 * 24 * time.Hour // 7 days
+	pngExt = ".png"
 )
 
 type ImageUploader interface {
@@ -78,39 +75,6 @@ func NewImageUploader() (ImageUploader, error) {
 		password := webdavSec.Key("password").String()
 
 		return NewWebdavImageUploader(url, username, password, public_url)
-	case "gcs":
-		gcssec, err := setting.Raw.GetSection("external_image_storage.gcs")
-		if err != nil {
-			return nil, err
-		}
-
-		keyFile := gcssec.Key("key_file").MustString("")
-		bucketName := gcssec.Key("bucket").MustString("")
-		path := gcssec.Key("path").MustString("")
-		enableSignedURLs := gcssec.Key("enable_signed_urls").MustBool(false)
-		exp := gcssec.Key("signed_url_expiration").MustString("")
-		var suExp time.Duration
-		if exp != "" {
-			suExp, err = time.ParseDuration(exp)
-			if err != nil {
-				return nil, err
-			}
-		} else {
-			suExp = defaultGCSSignedURLExpiration
-		}
-
-		return gcs.NewUploader(keyFile, bucketName, path, enableSignedURLs, suExp)
-	case "azure_blob":
-		azureBlobSec, err := setting.Raw.GetSection("external_image_storage.azure_blob")
-		if err != nil {
-			return nil, err
-		}
-
-		account_name := azureBlobSec.Key("account_name").MustString("")
-		account_key := azureBlobSec.Key("account_key").MustString("")
-		container_name := azureBlobSec.Key("container_name").MustString("")
-
-		return NewAzureBlobUploader(account_name, account_key, container_name), nil
 	case "local":
 		return NewLocalImageUploader()
 	}

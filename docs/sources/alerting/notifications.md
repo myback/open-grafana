@@ -191,7 +191,7 @@ Example json body:
   "panelId":2,
   "ruleId":1,
   "ruleName":"Panel Title alert",
-  "ruleUrl":"http://localhost:3000/d/hZ7BuVbWz/test-dashboard?fullscreen\u0026edit\u0026tab=alert\u0026panelId=2\u0026orgId=1",
+  "ruleUrl":"http://localhost:8080/d/hZ7BuVbWz/test-dashboard?fullscreen\u0026edit\u0026tab=alert\u0026panelId=2\u0026orgId=1",
   "state":"alerting",
   "tags":{
     "tag name":"tag value"

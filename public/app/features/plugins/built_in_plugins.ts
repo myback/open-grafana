@@ -1,7 +1,5 @@
 const graphitePlugin = async () =>
   await import(/* webpackChunkName: "graphitePlugin" */ 'app/plugins/datasource/graphite/module');
-const cloudwatchPlugin = async () =>
-  await import(/* webpackChunkName: "cloudwatchPlugin" */ 'app/plugins/datasource/cloudwatch/module');
 const dashboardDSPlugin = async () =>
   await import(/* webpackChunkName "dashboardDSPlugin" */ 'app/plugins/datasource/dashboard/module');
 const elasticsearchPlugin = async () =>
@@ -12,7 +10,6 @@ const grafanaPlugin = async () =>
   await import(/* webpackChunkName: "grafanaPlugin" */ 'app/plugins/datasource/grafana/module');
 const influxdbPlugin = async () =>
   await import(/* webpackChunkName: "influxdbPlugin" */ 'app/plugins/datasource/influxdb/module');
-const lokiPlugin = async () => await import(/* webpackChunkName: "lokiPlugin" */ 'app/plugins/datasource/loki/module');
 const jaegerPlugin = async () =>
   await import(/* webpackChunkName: "jaegerPlugin" */ 'app/plugins/datasource/jaeger/module');
 const zipkinPlugin = async () =>
@@ -29,14 +26,6 @@ const mssqlPlugin = async () =>
   await import(/* webpackChunkName: "mssqlPlugin" */ 'app/plugins/datasource/mssql/module');
 const testDataDSPlugin = async () =>
   await import(/* webpackChunkName: "testDataDSPlugin" */ 'app/plugins/datasource/testdata/module');
-const cloudMonitoringPlugin = async () =>
-  await import(/* webpackChunkName: "cloudMonitoringPlugin" */ 'app/plugins/datasource/cloud-monitoring/module');
-const azureMonitorPlugin = async () =>
-  await import(
-    /* webpackChunkName: "azureMonitorPlugin" */ 'app/plugins/datasource/grafana-azure-monitor-datasource/module'
-  );
-const tempoPlugin = async () =>
-  await import(/* webpackChunkName: "tempoPlugin" */ 'app/plugins/datasource/tempo/module');
 
 import * as textPanel from 'app/plugins/panel/text/module';
 import * as timeseriesPanel from 'app/plugins/panel/timeseries/module';
@@ -64,13 +53,11 @@ import * as nodeGraph from 'app/plugins/panel/nodeGraph/module';
 
 const builtInPlugins: any = {
   'app/plugins/datasource/graphite/module': graphitePlugin,
-  'app/plugins/datasource/cloudwatch/module': cloudwatchPlugin,
   'app/plugins/datasource/dashboard/module': dashboardDSPlugin,
   'app/plugins/datasource/elasticsearch/module': elasticsearchPlugin,
   'app/plugins/datasource/opentsdb/module': opentsdbPlugin,
   'app/plugins/datasource/grafana/module': grafanaPlugin,
   'app/plugins/datasource/influxdb/module': influxdbPlugin,
-  'app/plugins/datasource/loki/module': lokiPlugin,
   'app/plugins/datasource/jaeger/module': jaegerPlugin,
   'app/plugins/datasource/zipkin/module': zipkinPlugin,
   'app/plugins/datasource/mixed/module': mixedPlugin,
@@ -79,9 +66,6 @@ const builtInPlugins: any = {
   'app/plugins/datasource/mssql/module': mssqlPlugin,
   'app/plugins/datasource/prometheus/module': prometheusPlugin,
   'app/plugins/datasource/testdata/module': testDataDSPlugin,
-  'app/plugins/datasource/cloud-monitoring/module': cloudMonitoringPlugin,
-  'app/plugins/datasource/grafana-azure-monitor-datasource/module': azureMonitorPlugin,
-  'app/plugins/datasource/tempo/module': tempoPlugin,
 
   'app/plugins/panel/text/module': textPanel,
   'app/plugins/panel/timeseries/module': timeseriesPanel,

@@ -1,6 +1,6 @@
 package migrations
 
-import . "github.com/myback/grafana/pkg/services/sqlstore/migrator"
+import . "github.com/myback/open-grafana/pkg/services/sqlstore/migrator"
 
 func addTagMigration(mg *Migrator) {
 	tagTable := Table{

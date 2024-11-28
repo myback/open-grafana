@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"sort"
 
-	"github.com/myback/grafana/pkg/services/sqlstore/migrator"
+	"github.com/myback/open-grafana/pkg/services/sqlstore/migrator"
 )
 
 type Descriptor struct {

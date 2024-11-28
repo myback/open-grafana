@@ -10,19 +10,19 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/myback/grafana/pkg/api/dtos"
-	"github.com/myback/grafana/pkg/api/response"
-	"github.com/myback/grafana/pkg/api/routing"
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/components/simplejson"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/login"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/auth"
-	"github.com/myback/grafana/pkg/services/hooks"
-	"github.com/myback/grafana/pkg/services/licensing"
-	"github.com/myback/grafana/pkg/setting"
-	"github.com/myback/grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/api/dtos"
+	"github.com/myback/open-grafana/pkg/api/response"
+	"github.com/myback/open-grafana/pkg/api/routing"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/components/simplejson"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/login"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/auth"
+	"github.com/myback/open-grafana/pkg/services/hooks"
+	"github.com/myback/open-grafana/pkg/services/licensing"
+	"github.com/myback/open-grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/util"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -176,14 +176,14 @@ func TestLoginViewRedirect(t *testing.T) {
 			desc:        "grafana relative url without subpath",
 			url:         "/profile",
 			redirectURL: "/profile",
-			appURL:      "http://localhost:3000/",
+			appURL:      "http://localhost:8080/",
 			status:      302,
 		},
 		{
 			desc:        "grafana invalid relative url starting with the subpath",
 			url:         "/grafanablah",
 			redirectURL: "/grafana/",
-			appURL:      "http://localhost:3000/",
+			appURL:      "http://localhost:8080/",
 			appSubURL:   "/grafana",
 			status:      302,
 		},
@@ -191,7 +191,7 @@ func TestLoginViewRedirect(t *testing.T) {
 			desc:        "grafana relative url with subpath with leading slash",
 			url:         "/grafana/profile",
 			redirectURL: "/grafana/profile",
-			appURL:      "http://localhost:3000",
+			appURL:      "http://localhost:8080",
 			appSubURL:   "/grafana",
 			status:      302,
 		},
@@ -199,71 +199,71 @@ func TestLoginViewRedirect(t *testing.T) {
 			desc:        "relative url with missing subpath",
 			url:         "/profile",
 			redirectURL: "/grafana/",
-			appURL:      "http://localhost:3000/",
+			appURL:      "http://localhost:8080/",
 			appSubURL:   "/grafana",
 			status:      302,
 		},
 		{
 			desc:        "grafana absolute url",
-			url:         "http://localhost:3000/profile",
+			url:         "http://localhost:8080/profile",
 			redirectURL: "/",
-			appURL:      "http://localhost:3000/",
+			appURL:      "http://localhost:8080/",
 			status:      302,
 		},
 		{
 			desc:        "non grafana absolute url",
 			url:         "http://example.com",
 			redirectURL: "/",
-			appURL:      "http://localhost:3000/",
+			appURL:      "http://localhost:8080/",
 			status:      302,
 		},
 		{
 			desc:        "invalid url",
 			url:         ":foo",
 			redirectURL: "/",
-			appURL:      "http://localhost:3000/",
+			appURL:      "http://localhost:8080/",
 			status:      302,
 		},
 		{
 			desc:        "non-Grafana URL without scheme",
 			url:         "example.com",
 			redirectURL: "/",
-			appURL:      "http://localhost:3000/",
+			appURL:      "http://localhost:8080/",
 			status:      302,
 		},
 		{
 			desc:        "non-Grafana URL without scheme",
 			url:         "www.example.com",
 			redirectURL: "/",
-			appURL:      "http://localhost:3000/",
+			appURL:      "http://localhost:8080/",
 			status:      302,
 		},
 		{
 			desc:        "URL path is a host with two leading slashes",
 			url:         "//example.com",
 			redirectURL: "/",
-			appURL:      "http://localhost:3000/",
+			appURL:      "http://localhost:8080/",
 			status:      302,
 		},
 		{
 			desc:        "URL path is a host with three leading slashes",
 			url:         "///example.com",
 			redirectURL: "/",
-			appURL:      "http://localhost:3000/",
+			appURL:      "http://localhost:8080/",
 			status:      302,
 		},
 		{
 			desc:        "URL path is an IP address with two leading slashes",
 			url:         "//0.0.0.0",
 			redirectURL: "/",
-			appURL:      "http://localhost:3000/",
+			appURL:      "http://localhost:8080/",
 			status:      302,
 		},
 		{
 			desc:        "URL path is an IP address with three leading slashes",
 			url:         "///0.0.0.0",
 			redirectURL: "/",
-			appURL:      "http://localhost:3000/",
+			appURL:      "http://localhost:8080/",
 			status:      302,
 		},
 	}
@@ -357,80 +357,80 @@ func TestLoginPostRedirect(t *testing.T) {
 		{
 			desc:   "grafana relative url without subpath",
 			url:    "/profile",
-			appURL: "https://localhost:3000/",
+			appURL: "https://localhost:8080/",
 		},
 		{
 			desc:      "grafana relative url with subpath with leading slash",
 			url:       "/grafana/profile",
-			appURL:    "https://localhost:3000/",
+			appURL:    "https://localhost:8080/",
 			appSubURL: "/grafana",
 		},
 		{
 			desc:      "grafana invalid relative url starting with subpath",
 			url:       "/grafanablah",
-			appURL:    "https://localhost:3000/",
+			appURL:    "https://localhost:8080/",
 			appSubURL: "/grafana",
 			err:       login.ErrInvalidRedirectTo,
 		},
 		{
 			desc:      "relative url with missing subpath",
 			url:       "/profile",
-			appURL:    "https://localhost:3000/",
+			appURL:    "https://localhost:8080/",
 			appSubURL: "/grafana",
 			err:       login.ErrInvalidRedirectTo,
 		},
 		{
 			desc:   "grafana absolute url",
-			url:    "http://localhost:3000/profile",
-			appURL: "http://localhost:3000/",
+			url:    "http://localhost:8080/profile",
+			appURL: "http://localhost:8080/",
 			err:    login.ErrAbsoluteRedirectTo,
 		},
 		{
 			desc:   "non grafana absolute url",
 			url:    "http://example.com",
-			appURL: "https://localhost:3000/",
+			appURL: "https://localhost:8080/",
 			err:    login.ErrAbsoluteRedirectTo,
 		},
 		{
 			desc:   "invalid URL",
 			url:    ":foo",
-			appURL: "http://localhost:3000/",
+			appURL: "http://localhost:8080/",
 			err:    login.ErrInvalidRedirectTo,
 		},
 		{
 			desc:   "non-Grafana URL without scheme",
 			url:    "example.com",
-			appURL: "http://localhost:3000/",
+			appURL: "http://localhost:8080/",
 			err:    login.ErrForbiddenRedirectTo,
 		},
 		{
 			desc:   "non-Grafana URL without scheme",
 			url:    "www.example.com",
-			appURL: "http://localhost:3000/",
+			appURL: "http://localhost:8080/",
 			err:    login.ErrForbiddenRedirectTo,
 		},
 		{
 			desc:   "URL path is a host with two leading slashes",
 			url:    "//example.com",
-			appURL: "http://localhost:3000/",
+			appURL: "http://localhost:8080/",
 			err:    login.ErrForbiddenRedirectTo,
 		},
 		{
 			desc:   "URL path is a host with three leading slashes",
 			url:    "///example.com",
-			appURL: "http://localhost:3000/",
+			appURL: "http://localhost:8080/",
 			err:    login.ErrForbiddenRedirectTo,
 		},
 		{
 			desc:   "URL path is an IP address with two leading slashes",
 			url:    "//0.0.0.0",
-			appURL: "http://localhost:3000/",
+			appURL: "http://localhost:8080/",
 			err:    login.ErrForbiddenRedirectTo,
 		},
 		{
 			desc:   "URL path is an IP address with three leading slashes",
 			url:    "///0.0.0.0",
-			appURL: "http://localhost:3000/",
+			appURL: "http://localhost:8080/",
 			err:    login.ErrForbiddenRedirectTo,
 		},
 	}

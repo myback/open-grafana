@@ -6,14 +6,13 @@ import (
 	"time"
 
 	"github.com/centrifugal/centrifuge"
-	"github.com/myback/grafana/pkg/api/routing"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/plugins"
-	"github.com/myback/grafana/pkg/registry"
-	"github.com/myback/grafana/pkg/services/live/features"
-	"github.com/myback/grafana/pkg/setting"
-	"github.com/myback/grafana/pkg/tsdb/cloudwatch"
+	"github.com/myback/open-grafana/pkg/api/routing"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/plugins"
+	"github.com/myback/open-grafana/pkg/registry"
+	"github.com/myback/open-grafana/pkg/services/live/features"
+	"github.com/myback/open-grafana/pkg/setting"
 )
 
 var (
@@ -41,9 +40,8 @@ type CoreGrafanaScope struct {
 
 // GrafanaLive pretends to be the server
 type GrafanaLive struct {
-	Cfg           *setting.Cfg            `inject:""`
-	RouteRegister routing.RouteRegister   `inject:""`
-	LogsService   *cloudwatch.LogsService `inject:""`
+	Cfg           *setting.Cfg          `inject:""`
+	RouteRegister routing.RouteRegister `inject:""`
 	node          *centrifuge.Node
 
 	// The websocket handler
@@ -225,14 +223,6 @@ func (g *GrafanaLive) GetChannelHandlerFactory(scope string, name string) (model
 	}
 
 	if scope == "plugin" {
-		// Temporary hack until we have a more generic solution later on
-		if name == "cloudwatch" {
-			return &cloudwatch.LogQueryRunnerSupplier{
-				Publisher: g.Publish,
-				Service:   g.LogsService,
-			}, nil
-		}
-
 		p, ok := plugins.Plugins[name]
 		if ok {
 			h := &PluginHandler{

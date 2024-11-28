@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/myback/grafana/pkg/cmd/grafana-cli/models"
+	"github.com/myback/open-grafana/pkg/cmd/grafana-cli/models"
 	"github.com/stretchr/testify/assert"
 )
 

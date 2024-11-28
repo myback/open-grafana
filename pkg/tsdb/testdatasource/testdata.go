@@ -6,10 +6,10 @@ import (
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
 	"github.com/grafana/grafana-plugin-sdk-go/backend/datasource"
 	"github.com/grafana/grafana-plugin-sdk-go/backend/resource/httpadapter"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/plugins/backendplugin"
-	"github.com/myback/grafana/pkg/plugins/backendplugin/coreplugin"
-	"github.com/myback/grafana/pkg/registry"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/plugins/backendplugin"
+	"github.com/myback/open-grafana/pkg/plugins/backendplugin/coreplugin"
+	"github.com/myback/open-grafana/pkg/registry"
 )
 
 func init() {

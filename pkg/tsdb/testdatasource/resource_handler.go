@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/infra/log"
 
 	"github.com/grafana/grafana-plugin-sdk-go/backend/resource/httpadapter"
 )

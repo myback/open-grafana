@@ -7,8 +7,8 @@ import (
 	"net/http"
 
 	"github.com/go-jose/go-jose/v3/jwt"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/util/errutil"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/util/errutil"
 	"golang.org/x/oauth2"
 )
 

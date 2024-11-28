@@ -11,12 +11,12 @@ import (
 
 	"github.com/getsentry/sentry-go"
 	log "github.com/inconshreveable/log15"
-	"github.com/myback/grafana/pkg/api/frontendlogging"
-	"github.com/myback/grafana/pkg/api/response"
-	"github.com/myback/grafana/pkg/api/routing"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/plugins"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/api/frontendlogging"
+	"github.com/myback/open-grafana/pkg/api/response"
+	"github.com/myback/open-grafana/pkg/api/routing"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/plugins"
+	"github.com/myback/open-grafana/pkg/setting"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -96,7 +96,7 @@ func TestFrontendLoggingEndpoint(t *testing.T) {
 
 	t.Run("FrontendLoggingEndpoint", func(t *testing.T) {
 		request := sentry.Request{
-			URL: "http://localhost:3000/",
+			URL: "http://localhost:8080/",
 			Headers: map[string]string{
 				"User-Agent": "Chrome",
 			},
@@ -222,37 +222,37 @@ func TestFrontendLoggingEndpoint(t *testing.T) {
 							Frames: []sentry.Frame{
 								{
 									Function: "foofn",
-									Filename: "http://localhost:3000/public/build/moo/foo.js", // source map found and mapped, core
+									Filename: "http://localhost:8080/public/build/moo/foo.js", // source map found and mapped, core
 									Lineno:   2,
 									Colno:    5,
 								},
 								{
 									Function: "foofn",
-									Filename: "http://localhost:3000/public/plugins/telepathic/foo.js", // plugin, source map found and mapped
+									Filename: "http://localhost:8080/public/plugins/telepathic/foo.js", // plugin, source map found and mapped
 									Lineno:   3,
 									Colno:    10,
 								},
 								{
 									Function: "explode",
-									Filename: "http://localhost:3000/public/build/error.js", // reading source map throws error
+									Filename: "http://localhost:8080/public/build/error.js", // reading source map throws error
 									Lineno:   3,
 									Colno:    10,
 								},
 								{
 									Function: "wat",
-									Filename: "http://localhost:3000/public/build/bar.js", // core, but source map not found on fs
+									Filename: "http://localhost:8080/public/build/bar.js", // core, but source map not found on fs
 									Lineno:   3,
 									Colno:    10,
 								},
 								{
 									Function: "nope",
-									Filename: "http://localhost:3000/baz.js", // not core or plugin, wont even attempt to get source map
+									Filename: "http://localhost:8080/baz.js", // not core or plugin, wont even attempt to get source map
 									Lineno:   3,
 									Colno:    10,
 								},
 								{
 									Function: "fake",
-									Filename: "http://localhost:3000/public/build/../../secrets.txt", // path will be sanitized
+									Filename: "http://localhost:8080/public/build/../../secrets.txt", // path will be sanitized
 									Lineno:   3,
 									Colno:    10,
 								},
@@ -275,10 +275,10 @@ func TestFrontendLoggingEndpoint(t *testing.T) {
 			assertContextContains(t, logs[0], "stacktrace", `UserError: Please replace user and try again
   at ? (core|webpack:///./some_source.ts:2:2)
   at ? (telepathic|webpack:///./some_source.ts:3:2)
-  at explode (http://localhost:3000/public/build/error.js:3:10)
-  at wat (http://localhost:3000/public/build/bar.js:3:10)
-  at nope (http://localhost:3000/baz.js:3:10)
-  at fake (http://localhost:3000/public/build/../../secrets.txt:3:10)
+  at explode (http://localhost:8080/public/build/error.js:3:10)
+  at wat (http://localhost:8080/public/build/bar.js:3:10)
+  at nope (http://localhost:8080/baz.js:3:10)
+  at fake (http://localhost:8080/public/build/../../secrets.txt:3:10)
   at ? (core|webpack:///./some_source.ts:3:2)`)
 			assert.Len(t, sourceMapReads, 6)
 			assert.Equal(t, "/staticroot", sourceMapReads[0].dir)

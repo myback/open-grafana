@@ -6,7 +6,7 @@ interface SearchTestDataSetupOptions {
 }
 
 const client = axios.create({
-  baseURL: 'http://localhost:3000/api',
+  baseURL: 'http://localhost:8080/api',
   auth: {
     username: 'admin',
     password: 'admin2',

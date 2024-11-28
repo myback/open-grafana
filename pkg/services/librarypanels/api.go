@@ -5,11 +5,11 @@ import (
 
 	"github.com/go-macaron/binding"
 
-	"github.com/myback/grafana/pkg/api/response"
-	"github.com/myback/grafana/pkg/api/routing"
-	"github.com/myback/grafana/pkg/middleware"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/api/response"
+	"github.com/myback/open-grafana/pkg/api/routing"
+	"github.com/myback/open-grafana/pkg/middleware"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/util"
 )
 
 func (lps *LibraryPanelService) registerAPIEndpoints() {

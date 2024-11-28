@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/myback/grafana/pkg/expr"
+	"github.com/myback/open-grafana/pkg/expr"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

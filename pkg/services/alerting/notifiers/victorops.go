@@ -3,12 +3,12 @@ package notifiers
 import (
 	"time"
 
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/components/simplejson"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/alerting"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/components/simplejson"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/alerting"
+	"github.com/myback/open-grafana/pkg/setting"
 )
 
 // AlertStateCritical - Victorops uses "CRITICAL" string to indicate "Alerting" state

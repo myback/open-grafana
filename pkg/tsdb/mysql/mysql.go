@@ -10,13 +10,13 @@ import (
 	"strings"
 
 	"github.com/VividCortex/mysqlerr"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/setting"
 
 	"github.com/go-sql-driver/mysql"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/tsdb"
-	"github.com/myback/grafana/pkg/tsdb/sqleng"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/tsdb"
+	"github.com/myback/open-grafana/pkg/tsdb/sqleng"
 	"xorm.io/core"
 )
 

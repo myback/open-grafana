@@ -7,11 +7,11 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/myback/grafana/pkg/components/securejsondata"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/alerting"
-	"github.com/myback/grafana/pkg/services/provisioning/utils"
+	"github.com/myback/open-grafana/pkg/components/securejsondata"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/alerting"
+	"github.com/myback/open-grafana/pkg/services/provisioning/utils"
 	"gopkg.in/yaml.v2"
 )
 

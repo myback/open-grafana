@@ -7,7 +7,7 @@ http:
     grafana-subpath:
       loadBalancer:
         servers:
-          - url: 'http://grafana-subpath:3000/'
+          - url: 'http://grafana-subpath:8080/'
 
   routers:
     grafana-subpath:

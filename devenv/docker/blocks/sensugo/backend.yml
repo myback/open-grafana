@@ -29,7 +29,7 @@ state-dir: "/var/lib/sensu/sensu-backend"
 #dashboard-cert-file: "/path/to/ssl/cert.pem"
 #dashboard-key-file: "/path/to/ssl/key.pem"
 #dashboard-host: "[::]" # listen on all IPv4 and IPv6 addresses
-#dashboard-port: 3000
+#dashboard-port: 8080
 
 ##
 # ssl configuration

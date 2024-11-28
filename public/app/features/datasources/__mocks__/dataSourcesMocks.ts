@@ -1,5 +1,7 @@
 import { DataSourceSettings } from '@grafana/data';
 
+// kludges
+
 export const getMockDataSources = (amount: number) => {
   const dataSources = [];
 
@@ -15,8 +17,8 @@ export const getMockDataSources = (amount: number) => {
       orgId: 1,
       password: '',
       readOnly: false,
-      type: 'cloudwatch',
-      typeLogoUrl: 'public/app/plugins/datasource/cloudwatch/img/amazon-web-services.png',
+      type: 'elasticsearch',
+      typeLogoUrl: 'public/app/plugins/datasource/elasticsearch/img/elasticsearch.svg',
       url: '',
       user: '',
     });
@@ -37,12 +39,12 @@ export const getMockDataSource = (): DataSourceSettings => {
     isDefault: false,
     jsonData: { authType: 'credentials', defaultRegion: 'eu-west-2' },
     name: 'gdev-cloudwatch',
-    typeName: 'Cloudwatch',
+    typeName: 'Elasticsearch',
     orgId: 1,
     password: '',
     readOnly: false,
-    type: 'cloudwatch',
-    typeLogoUrl: 'public/app/plugins/datasource/cloudwatch/img/amazon-web-services.png',
+    type: 'elasticsearch',
+    typeLogoUrl: 'public/app/plugins/datasource/elasticsearch/img/elasticsearch.svg',
     url: '',
     user: '',
     secureJsonFields: {},

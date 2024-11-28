@@ -1,8 +1,8 @@
 package ngalert
 
 import (
-	"github.com/myback/grafana/pkg/api/response"
-	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/api/response"
+	"github.com/myback/open-grafana/pkg/models"
 )
 
 // listAlertInstancesEndpoint handles GET /api/alert-instances.

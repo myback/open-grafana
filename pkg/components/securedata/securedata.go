@@ -1,8 +1,8 @@
 package securedata
 
 import (
-	"github.com/myback/grafana/pkg/setting"
-	"github.com/myback/grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/util"
 )
 
 type SecureData []byte

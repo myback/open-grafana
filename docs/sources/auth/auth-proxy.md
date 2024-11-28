@@ -39,7 +39,7 @@ enable_login_token = false
 ## Interacting with Grafana’s AuthProxy via curl
 
 ```bash
-curl -H "X-WEBAUTH-USER: admin"  http://localhost:3000/api/users
+curl -H "X-WEBAUTH-USER: admin"  http://localhost:8080/api/users
 [
     {
         "id":1,
@@ -54,7 +54,7 @@ curl -H "X-WEBAUTH-USER: admin"  http://localhost:3000/api/users
 We can then send a second request to the `/api/user` method which will return the details of the logged in user. We will use this request to show how Grafana automatically adds the new user we specify to the system. Here we create a new user called “anthony”.
 
 ```bash
-curl -H "X-WEBAUTH-USER: anthony" http://localhost:3000/api/user
+curl -H "X-WEBAUTH-USER: anthony" http://localhost:8080/api/user
 {
     "email":"anthony",
     "name":"",
@@ -98,8 +98,8 @@ In this example we use Apache as a reverse proxy in front of Grafana. Apache han
         RequestHeader unset Authorization
 
         ProxyRequests Off
-        ProxyPass / http://localhost:3000/
-        ProxyPassReverse / http://localhost:3000/
+        ProxyPass / http://localhost:8080/
+        ProxyPassReverse / http://localhost:8080/
     </VirtualHost>
 ```
 
@@ -198,8 +198,8 @@ LogLevel error
 </Proxy>
 RequestHeader unset Authorization
 ProxyRequests Off
-ProxyPass / http://grafana:3000/
-ProxyPassReverse / http://grafana:3000/
+ProxyPass / http://grafana:8080/
+ProxyPassReverse / http://grafana:8080/
 ```
 
 - Create a htpasswd file. We create a new user **anthony** with the password **password**
@@ -239,7 +239,7 @@ Once that's done. You can verify your mappings by querying the API.
 
 ```bash
 # First, inspect your teams and obtain the corresponding ID of the team we want to inspect the groups for.
-curl -H "X-WEBAUTH-USER: admin" http://localhost:3000/api/teams/search
+curl -H "X-WEBAUTH-USER: admin" http://localhost:8080/api/teams/search
 {
   "totalCount": 2,
   "teams": [
@@ -267,7 +267,7 @@ curl -H "X-WEBAUTH-USER: admin" http://localhost:3000/api/teams/search
 }
 
 # Then, query the groups for that particular team. In our case, the Loki team which has an ID of "2".
-curl -H "X-WEBAUTH-USER: admin" http://localhost:3000/api/teams/2/groups
+curl -H "X-WEBAUTH-USER: admin" http://localhost:8080/api/teams/2/groups
 [
   {
     "orgId": 1,
@@ -280,7 +280,7 @@ curl -H "X-WEBAUTH-USER: admin" http://localhost:3000/api/teams/2/groups
 Finally, whenever Grafana receives a request with a header of `X-WEBAUTH-GROUPS: lokiTeamOnExternalSystem`, the user under authentication will be placed into the specified team. Placement in multiple teams is supported by using comma-separated values e.g. `lokiTeamOnExternalSystem,CoreTeamOnExternalSystem`.
 
 ```bash
-curl -H "X-WEBAUTH-USER: leonard" -H "X-WEBAUTH-GROUPS: lokiteamOnExternalSystem" http://localhost:3000/dashboards/home
+curl -H "X-WEBAUTH-USER: leonard" -H "X-WEBAUTH-GROUPS: lokiteamOnExternalSystem" http://localhost:8080/dashboards/home
 {
   "meta": {
     "isHome": true,

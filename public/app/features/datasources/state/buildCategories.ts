@@ -8,7 +8,6 @@ export function buildCategories(plugins: DataSourcePluginMeta[]): DataSourcePlug
     { id: 'logging', title: 'Logging & document databases', plugins: [] },
     { id: 'tracing', title: 'Distributed tracing', plugins: [] },
     { id: 'sql', title: 'SQL', plugins: [] },
-    { id: 'cloud', title: 'Cloud', plugins: [] },
     { id: 'enterprise', title: 'Enterprise plugins', plugins: [] },
     { id: 'iot', title: 'Industrial & IoT', plugins: [] },
     { id: 'other', title: 'Others', plugins: [] },
@@ -48,11 +47,6 @@ export function buildCategories(plugins: DataSourcePluginMeta[]): DataSourcePlug
   }
 
   for (const category of categories) {
-    // add phantom plugin
-    if (category.id === 'cloud') {
-      category.plugins.push(getGrafanaCloudPhantomPlugin());
-    }
-
     // add phantom plugins
     if (category.id === 'enterprise') {
       for (const plugin of enterprisePlugins) {
@@ -157,30 +151,6 @@ function getEnterprisePhantomPlugins(): DataSourcePluginMeta[] {
       imgUrl: 'public/img/plugins/appdynamics.svg',
     }),
   ];
-}
-
-function getGrafanaCloudPhantomPlugin(): DataSourcePluginMeta {
-  return {
-    id: 'gcloud',
-    name: 'Grafana Cloud',
-    type: PluginType.datasource,
-    module: 'phantom',
-    baseUrl: '',
-    info: {
-      description: 'Hosted Graphite, Prometheus and Loki',
-      logos: { small: 'public/img/grafana_icon.svg', large: 'asd' },
-      author: { name: 'Grafana Labs' },
-      links: [
-        {
-          url: 'https://grafana.com/products/cloud/',
-          name: 'Learn more',
-        },
-      ],
-      screenshots: [],
-      updated: '2019-05-10',
-      version: '1.0.0',
-    },
-  };
 }
 
 interface GetPhantomPluginOptions {

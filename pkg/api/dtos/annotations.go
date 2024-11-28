@@ -1,6 +1,6 @@
 package dtos
 
-import "github.com/myback/grafana/pkg/components/simplejson"
+import "github.com/myback/open-grafana/pkg/components/simplejson"
 
 type PostAnnotationsCmd struct {
 	DashboardId int64            `json:"dashboardId"`

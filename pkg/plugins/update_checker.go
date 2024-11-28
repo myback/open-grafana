@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/hashicorp/go-version"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/setting"
 )
 
 var (

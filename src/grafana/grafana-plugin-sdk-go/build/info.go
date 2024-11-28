@@ -12,7 +12,7 @@ var buildInfoJSON string
 // exposed for testing.
 var now = time.Now
 
-// Info See also PluginBuildInfo in https://github.com/myback/grafana/blob/master/pkg/plugins/models.go
+// Info See also PluginBuildInfo in https://github.com/myback/open-grafana/blob/master/pkg/plugins/models.go
 type Info struct {
 	Time    int64  `json:"time,omitempty"`
 	Version string `json:"version,omitempty"`

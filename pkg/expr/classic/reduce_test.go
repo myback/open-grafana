@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/myback/grafana/pkg/expr/mathexp"
+	"github.com/myback/open-grafana/pkg/expr/mathexp"
 	"github.com/stretchr/testify/require"
 	ptr "github.com/xorcare/pointer"
 )

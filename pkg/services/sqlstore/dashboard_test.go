@@ -9,12 +9,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/myback/grafana/pkg/components/simplejson"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/search"
-	"github.com/myback/grafana/pkg/services/sqlstore/searchstore"
-	"github.com/myback/grafana/pkg/setting"
-	"github.com/myback/grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/components/simplejson"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/search"
+	"github.com/myback/open-grafana/pkg/services/sqlstore/searchstore"
+	"github.com/myback/open-grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/util"
 
 	. "github.com/smartystreets/goconvey/convey"
 	"github.com/stretchr/testify/assert"

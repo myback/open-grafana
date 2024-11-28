@@ -7,9 +7,9 @@ import (
 	rendererV1 "github.com/grafana/grafana-plugin-model/go/renderer"
 	"github.com/grafana/grafana-plugin-sdk-go/backend/grpcplugin"
 	goplugin "github.com/hashicorp/go-plugin"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/plugins/backendplugin"
-	"github.com/myback/grafana/pkg/plugins/backendplugin/pluginextensionv2"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/plugins/backendplugin"
+	"github.com/myback/open-grafana/pkg/plugins/backendplugin/pluginextensionv2"
 )
 
 const (

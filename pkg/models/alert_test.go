@@ -3,7 +3,7 @@ package models
 import (
 	"testing"
 
-	"github.com/myback/grafana/pkg/components/simplejson"
+	"github.com/myback/open-grafana/pkg/components/simplejson"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

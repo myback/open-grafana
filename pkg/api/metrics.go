@@ -5,15 +5,15 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/myback/grafana/pkg/expr"
-	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/expr"
+	"github.com/myback/open-grafana/pkg/models"
 
-	"github.com/myback/grafana/pkg/api/dtos"
-	"github.com/myback/grafana/pkg/api/response"
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/components/simplejson"
-	"github.com/myback/grafana/pkg/tsdb"
-	"github.com/myback/grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/api/dtos"
+	"github.com/myback/open-grafana/pkg/api/response"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/components/simplejson"
+	"github.com/myback/open-grafana/pkg/tsdb"
+	"github.com/myback/open-grafana/pkg/util"
 )
 
 // QueryMetricsV2 returns query metrics.

@@ -3,8 +3,8 @@ package migrations
 import (
 	"fmt"
 
-	. "github.com/myback/grafana/pkg/services/sqlstore/migrator"
-	"github.com/myback/grafana/pkg/util"
+	. "github.com/myback/open-grafana/pkg/services/sqlstore/migrator"
+	"github.com/myback/open-grafana/pkg/util"
 	"xorm.io/xorm"
 )
 

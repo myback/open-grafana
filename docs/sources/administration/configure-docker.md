@@ -21,7 +21,7 @@ If you do not designate a location for information storage, then all your Grafan
 docker volume create grafana-storage
 
 # start grafana
-docker run -d -p 3000:3000 --name=grafana -v grafana-storage:/var/lib/grafana grafana/grafana
+docker run -d -p 8080:8080 --name=grafana -v grafana-storage:/var/lib/grafana grafana/grafana
 ```
 
 ### Run Grafana container using bind mounts
@@ -33,7 +33,7 @@ mkdir data # creates a folder for your data
 ID=$(id -u) # saves your user id in the ID variable
 
 # starts grafana with your user id and using the data folder
-docker run -d --user $ID --volume "$PWD/data:/var/lib/grafana" -p 3000:3000 grafana/grafana:7.2.1
+docker run -d --user $ID --volume "$PWD/data:/var/lib/grafana" -p 8080:8080 grafana/grafana:7.2.1
 ```
 
 ## Default paths
@@ -57,7 +57,7 @@ Example:
 
 ```bash
 # Run Grafana while logging to both standard out and /var/log/grafana/grafana.log
-docker run -p 3000:3000 -e "GF_LOG_MODE=console file" grafana/grafana
+docker run -p 8080:8080 -e "GF_LOG_MODE=console file" grafana/grafana
 ```
 
 ## Configure Grafana with Docker Secrets
@@ -77,7 +77,7 @@ For example, you could set the admin password this way:
 
 ```bash
 docker run -d \
--p 3000:3000 \
+-p 8080:8080 \
 --name=grafana \
 -e "GF_AWS_PROFILES=default" \
 -e "GF_AWS_default_ACCESS_KEY_ID=YOUR_ACCESS_KEY" \

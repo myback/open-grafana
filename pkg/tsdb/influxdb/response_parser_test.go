@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/setting"
 	"github.com/stretchr/testify/require"
 )
 

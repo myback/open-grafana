@@ -8,12 +8,12 @@ import (
 
 	"gopkg.in/macaron.v1"
 
-	"github.com/myback/grafana/pkg/infra/remotecache"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/auth"
-	"github.com/myback/grafana/pkg/services/contexthandler"
-	"github.com/myback/grafana/pkg/services/sqlstore"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/infra/remotecache"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/auth"
+	"github.com/myback/open-grafana/pkg/services/contexthandler"
+	"github.com/myback/open-grafana/pkg/services/sqlstore"
+	"github.com/myback/open-grafana/pkg/setting"
 	"github.com/stretchr/testify/require"
 )
 

@@ -9,12 +9,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/dashboards"
-	"github.com/myback/grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/dashboards"
+	"github.com/myback/open-grafana/pkg/util"
 
-	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/infra/log"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

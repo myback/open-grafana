@@ -10,7 +10,7 @@ import (
 
 	storage "cloud.google.com/go/storage"
 	gomock "github.com/golang/mock/gomock"
-	gcsifaces "github.com/myback/grafana/pkg/ifaces/gcsifaces"
+	gcsifaces "github.com/myback/open-grafana/pkg/ifaces/gcsifaces"
 	google "golang.org/x/oauth2/google"
 	jwt "golang.org/x/oauth2/jwt"
 )

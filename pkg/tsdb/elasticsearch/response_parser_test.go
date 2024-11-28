@@ -6,11 +6,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/myback/grafana/pkg/components/null"
-	"github.com/myback/grafana/pkg/components/simplejson"
-	es "github.com/myback/grafana/pkg/tsdb/elasticsearch/client"
+	"github.com/myback/open-grafana/pkg/components/null"
+	"github.com/myback/open-grafana/pkg/components/simplejson"
+	es "github.com/myback/open-grafana/pkg/tsdb/elasticsearch/client"
 
-	"github.com/myback/grafana/pkg/tsdb"
+	"github.com/myback/open-grafana/pkg/tsdb"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

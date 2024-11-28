@@ -43,12 +43,12 @@ describe('DataLinksListItem', () => {
     it('then the link url should be visible', () => {
       const link = {
         ...baseLink,
-        url: 'http://localhost:3000',
+        url: 'http://localhost:8080',
       };
       setupTestContext({ link });
 
-      expect(screen.getByText(/http:\/\/localhost\:3000/i)).toBeInTheDocument();
-      expect(screen.getByTitle(/http:\/\/localhost\:3000/i)).toBeInTheDocument();
+      expect(screen.getByText(/http:\/\/localhost\:8080/i)).toBeInTheDocument();
+      expect(screen.getByTitle(/http:\/\/localhost\:8080/i)).toBeInTheDocument();
     });
   });
 

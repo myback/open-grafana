@@ -12,7 +12,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/setting"
 )
 
 var netTransport = &http.Transport{

@@ -3,8 +3,7 @@ package imguploader
 import (
 	"testing"
 
-	"github.com/myback/grafana/pkg/components/imguploader/gcs"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/setting"
 
 	. "github.com/smartystreets/goconvey/convey"
 )
@@ -110,61 +109,6 @@ func TestImageUploaderFactory(t *testing.T) {
 			So(original.url, ShouldEqual, "webdavUrl")
 			So(original.username, ShouldEqual, "username")
 			So(original.password, ShouldEqual, "password")
-		})
-
-		Convey("GCS uploader", func() {
-			cfg := setting.NewCfg()
-			err := cfg.Load(&setting.CommandLineArgs{
-				HomePath: "../../../",
-			})
-			So(err, ShouldBeNil)
-
-			setting.ImageUploadProvider = "gcs"
-
-			gcpSec, err := cfg.Raw.GetSection("external_image_storage.gcs")
-			So(err, ShouldBeNil)
-			_, err = gcpSec.NewKey("key_file", "/etc/secrets/project-79a52befa3f6.json")
-			So(err, ShouldBeNil)
-			_, err = gcpSec.NewKey("bucket", "project-grafana-east")
-			So(err, ShouldBeNil)
-
-			uploader, err := NewImageUploader()
-			So(err, ShouldBeNil)
-
-			original, ok := uploader.(*gcs.Uploader)
-			So(ok, ShouldBeTrue)
-			So(original.KeyFile, ShouldEqual, "/etc/secrets/project-79a52befa3f6.json")
-			So(original.Bucket, ShouldEqual, "project-grafana-east")
-		})
-
-		Convey("AzureBlobUploader config", func() {
-			cfg := setting.NewCfg()
-			err := cfg.Load(&setting.CommandLineArgs{
-				HomePath: "../../../",
-			})
-			So(err, ShouldBeNil)
-
-			setting.ImageUploadProvider = "azure_blob"
-
-			Convey("with container name", func() {
-				azureBlobSec, err := cfg.Raw.GetSection("external_image_storage.azure_blob")
-				So(err, ShouldBeNil)
-				_, err = azureBlobSec.NewKey("account_name", "account_name")
-				So(err, ShouldBeNil)
-				_, err = azureBlobSec.NewKey("account_key", "account_key")
-				So(err, ShouldBeNil)
-				_, err = azureBlobSec.NewKey("container_name", "container_name")
-				So(err, ShouldBeNil)
-
-				uploader, err := NewImageUploader()
-				So(err, ShouldBeNil)
-
-				original, ok := uploader.(*AzureBlobUploader)
-				So(ok, ShouldBeTrue)
-				So(original.account_name, ShouldEqual, "account_name")
-				So(original.account_key, ShouldEqual, "account_key")
-				So(original.container_name, ShouldEqual, "container_name")
-			})
 		})
 
 		Convey("Local uploader", func() {

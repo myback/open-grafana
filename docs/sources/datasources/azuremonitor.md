@@ -58,7 +58,7 @@ The data source can access metrics from four different services. You can configu
 Alternatively on step 4 if creating a new Azure Active Directory App, use the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest):
 
 ```bash
-az ad sp create-for-rbac -n "http://localhost:3000"
+az ad sp create-for-rbac -n "http://localhost:8080"
 ```
 
 ## Choose a Service

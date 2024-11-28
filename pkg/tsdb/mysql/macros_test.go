@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/tsdb"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/tsdb"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

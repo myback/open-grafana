@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/myback/grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/util"
 )
 
 var ErrInvalidApiKey = errors.New("invalid API key")

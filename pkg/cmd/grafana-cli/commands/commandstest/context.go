@@ -3,7 +3,7 @@ package commandstest
 import (
 	"flag"
 
-	"github.com/myback/grafana/pkg/cmd/grafana-cli/utils"
+	"github.com/myback/open-grafana/pkg/cmd/grafana-cli/utils"
 	"github.com/urfave/cli/v2"
 )
 

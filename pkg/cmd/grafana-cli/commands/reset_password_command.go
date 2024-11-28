@@ -6,13 +6,13 @@ import (
 	"os"
 
 	"github.com/fatih/color"
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/cmd/grafana-cli/logger"
-	"github.com/myback/grafana/pkg/cmd/grafana-cli/utils"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/sqlstore"
-	"github.com/myback/grafana/pkg/util"
-	"github.com/myback/grafana/pkg/util/errutil"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/cmd/grafana-cli/logger"
+	"github.com/myback/open-grafana/pkg/cmd/grafana-cli/utils"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/sqlstore"
+	"github.com/myback/open-grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/util/errutil"
 )
 
 const AdminUserId = 1

@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/myback/grafana/pkg/services/sqlstore"
+	"github.com/myback/open-grafana/pkg/services/sqlstore"
 )
 
 // getAlertInstance is a handler for retrieving an alert instance based on OrgId, AlertDefintionID, and

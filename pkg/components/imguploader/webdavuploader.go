@@ -13,7 +13,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/myback/grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/util"
 )
 
 type WebdavUploader struct {

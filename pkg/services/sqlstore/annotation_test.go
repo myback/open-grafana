@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/myback/grafana/pkg/services/annotations"
+	"github.com/myback/open-grafana/pkg/services/annotations"
 )
 
 func TestAnnotations(t *testing.T) {

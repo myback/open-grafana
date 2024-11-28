@@ -5,8 +5,8 @@ import (
 
 	"gopkg.in/macaron.v1"
 
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/quota"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/quota"
 )
 
 // Quota returns a function that returns a function used to call quotaservice based on target name

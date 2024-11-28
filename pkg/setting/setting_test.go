@@ -32,7 +32,7 @@ func TestLoadingSettings(t *testing.T) {
 			So(err, ShouldBeNil)
 
 			So(cfg.AdminUser, ShouldEqual, "admin")
-			So(cfg.RendererCallbackUrl, ShouldEqual, "http://localhost:3000/")
+			So(cfg.RendererCallbackUrl, ShouldEqual, "http://localhost:8080/")
 		})
 
 		Convey("default.ini should have no semi-colon commented entries", func() {
@@ -298,10 +298,10 @@ func TestParseAppURLAndSubURL(t *testing.T) {
 		expectedAppURL    string
 		expectedAppSubURL string
 	}{
-		{rootURL: "http://localhost:3000/", expectedAppURL: "http://localhost:3000/"},
-		{rootURL: "http://localhost:3000", expectedAppURL: "http://localhost:3000/"},
-		{rootURL: "http://localhost:3000/grafana", expectedAppURL: "http://localhost:3000/grafana/", expectedAppSubURL: "/grafana"},
-		{rootURL: "http://localhost:3000/grafana/", expectedAppURL: "http://localhost:3000/grafana/", expectedAppSubURL: "/grafana"},
+		{rootURL: "http://localhost:8080/", expectedAppURL: "http://localhost:8080/"},
+		{rootURL: "http://localhost:8080", expectedAppURL: "http://localhost:8080/"},
+		{rootURL: "http://localhost:8080/grafana", expectedAppURL: "http://localhost:8080/grafana/", expectedAppSubURL: "/grafana"},
+		{rootURL: "http://localhost:8080/grafana/", expectedAppURL: "http://localhost:8080/grafana/", expectedAppSubURL: "/grafana"},
 	}
 
 	for _, tc := range testCases {

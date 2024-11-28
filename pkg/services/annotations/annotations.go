@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 
-	"github.com/myback/grafana/pkg/components/simplejson"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/components/simplejson"
+	"github.com/myback/open-grafana/pkg/setting"
 )
 
 var (

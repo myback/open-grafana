@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/myback/grafana/pkg/tests/testinfra"
+	"github.com/myback/open-grafana/pkg/tests/testinfra"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

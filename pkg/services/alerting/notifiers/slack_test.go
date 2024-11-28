@@ -3,9 +3,9 @@ package notifiers
 import (
 	"testing"
 
-	"github.com/myback/grafana/pkg/components/securejsondata"
-	"github.com/myback/grafana/pkg/components/simplejson"
-	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/components/securejsondata"
+	"github.com/myback/open-grafana/pkg/components/simplejson"
+	"github.com/myback/open-grafana/pkg/models"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

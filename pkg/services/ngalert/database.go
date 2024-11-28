@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/myback/grafana/pkg/services/sqlstore"
-	"github.com/myback/grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/services/sqlstore"
+	"github.com/myback/open-grafana/pkg/util"
 )
 
 type store interface {

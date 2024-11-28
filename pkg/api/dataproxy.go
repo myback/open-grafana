@@ -6,11 +6,11 @@ import (
 	"net/http"
 	"regexp"
 
-	"github.com/myback/grafana/pkg/api/datasource"
-	"github.com/myback/grafana/pkg/api/pluginproxy"
-	"github.com/myback/grafana/pkg/infra/metrics"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/plugins"
+	"github.com/myback/open-grafana/pkg/api/datasource"
+	"github.com/myback/open-grafana/pkg/api/pluginproxy"
+	"github.com/myback/open-grafana/pkg/infra/metrics"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/plugins"
 )
 
 // ProxyDataSourceRequest proxies datasource requests

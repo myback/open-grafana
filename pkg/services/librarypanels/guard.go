@@ -1,9 +1,9 @@
 package librarypanels
 
 import (
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/dashboards"
-	"github.com/myback/grafana/pkg/services/guardian"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/dashboards"
+	"github.com/myback/open-grafana/pkg/services/guardian"
 )
 
 func isGeneralFolder(folderID int64) bool {

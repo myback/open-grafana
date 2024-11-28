@@ -8,10 +8,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/components/securejsondata"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/components/securejsondata"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/util"
 )
 
 func init() {

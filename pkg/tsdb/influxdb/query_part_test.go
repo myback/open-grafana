@@ -3,7 +3,7 @@ package influxdb
 import (
 	"testing"
 
-	"github.com/myback/grafana/pkg/tsdb"
+	"github.com/myback/open-grafana/pkg/tsdb"
 )
 
 func TestInfluxdbQueryPart(t *testing.T) {

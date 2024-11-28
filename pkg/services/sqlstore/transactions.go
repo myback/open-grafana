@@ -6,9 +6,9 @@ import (
 	"time"
 
 	"github.com/mattn/go-sqlite3"
-	"github.com/myback/grafana/pkg/bus"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/util/errutil"
+	"github.com/myback/open-grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/util/errutil"
 	"xorm.io/xorm"
 )
 

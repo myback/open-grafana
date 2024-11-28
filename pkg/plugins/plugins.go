@@ -12,14 +12,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/myback/grafana/pkg/infra/fs"
-	"github.com/myback/grafana/pkg/infra/log"
-	"github.com/myback/grafana/pkg/infra/metrics"
-	"github.com/myback/grafana/pkg/plugins/backendplugin"
-	"github.com/myback/grafana/pkg/registry"
-	"github.com/myback/grafana/pkg/setting"
-	"github.com/myback/grafana/pkg/util"
-	"github.com/myback/grafana/pkg/util/errutil"
+	"github.com/myback/open-grafana/pkg/infra/fs"
+	"github.com/myback/open-grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/infra/metrics"
+	"github.com/myback/open-grafana/pkg/plugins/backendplugin"
+	"github.com/myback/open-grafana/pkg/registry"
+	"github.com/myback/open-grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/util"
+	"github.com/myback/open-grafana/pkg/util/errutil"
 )
 
 var (

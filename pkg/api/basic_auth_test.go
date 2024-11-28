@@ -16,7 +16,7 @@ func TestBasicAuthenticatedRequest(t *testing.T) {
 	const expectedPass = "password"
 
 	t.Run("Given a valid set of basic auth credentials", func(t *testing.T) {
-		httpReq, err := http.NewRequest("GET", "http://localhost:3000/metrics", nil)
+		httpReq, err := http.NewRequest("GET", "http://localhost:8080/metrics", nil)
 		require.NoError(t, err)
 		req := macaron.Request{
 			Request: httpReq,
@@ -29,7 +29,7 @@ func TestBasicAuthenticatedRequest(t *testing.T) {
 	})
 
 	t.Run("Given an invalid set of basic auth credentials", func(t *testing.T) {
-		httpReq, err := http.NewRequest("GET", "http://localhost:3000/metrics", nil)
+		httpReq, err := http.NewRequest("GET", "http://localhost:8080/metrics", nil)
 		require.NoError(t, err)
 		req := macaron.Request{
 			Request: httpReq,

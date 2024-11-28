@@ -5,18 +5,18 @@ import (
 	"testing"
 	"time"
 
-	"github.com/myback/grafana/pkg/services/validations"
+	"github.com/myback/open-grafana/pkg/services/validations"
 
-	"github.com/myback/grafana/pkg/components/simplejson"
-	"github.com/myback/grafana/pkg/services/rendering"
-	"github.com/myback/grafana/pkg/setting"
+	"github.com/myback/open-grafana/pkg/components/simplejson"
+	"github.com/myback/open-grafana/pkg/services/rendering"
+	"github.com/myback/open-grafana/pkg/setting"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/myback/grafana/pkg/bus"
+	"github.com/myback/open-grafana/pkg/bus"
 	"github.com/stretchr/testify/require"
 
-	"github.com/myback/grafana/pkg/components/imguploader"
-	"github.com/myback/grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/components/imguploader"
+	"github.com/myback/open-grafana/pkg/models"
 )
 
 func TestNotificationService(t *testing.T) {
@@ -27,7 +27,7 @@ func TestNotificationService(t *testing.T) {
 	evalCtxWithMatch := NewEvalContext(context.Background(), testRuleTemplated, &validations.OSSPluginRequestValidator{})
 	evalCtxWithMatch.EvalMatches = []*EvalMatch{{
 		Tags: map[string]string{
-			"instance": "localhost:3000",
+			"instance": "localhost:8080",
 			"quantile": "0.99",
 		},
 	}}
@@ -136,7 +136,7 @@ func TestNotificationService(t *testing.T) {
 			require.Equalf(sc.t, 1, sc.imageUploadCount, "expected image to be uploaded, but wasn't")
 			require.Truef(sc.t, ctx.Ctx.Value(notificationSent{}).(bool), "expected notification to be sent, but wasn't")
 			assert.Equal(t, "Test latency 0.99", ctx.Rule.Name)
-			assert.Equal(t, "Something is bad on instance localhost:3000", ctx.Rule.Message)
+			assert.Equal(t, "Something is bad on instance localhost:8080", ctx.Rule.Message)
 		})
 
 	notificationServiceScenario(t, "Given unmatched alert rule with templated notification fields",

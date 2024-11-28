@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/myback/grafana/pkg/infra/log"
+	"github.com/myback/open-grafana/pkg/infra/log"
 	. "github.com/smartystreets/goconvey/convey"
 	"gopkg.in/ldap.v3"
 )

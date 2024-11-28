@@ -4,10 +4,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/myback/grafana/pkg/cmd/grafana-cli/commands/commandstest"
-	"github.com/myback/grafana/pkg/components/securejsondata"
-	"github.com/myback/grafana/pkg/models"
-	"github.com/myback/grafana/pkg/services/sqlstore"
+	"github.com/myback/open-grafana/pkg/cmd/grafana-cli/commands/commandstest"
+	"github.com/myback/open-grafana/pkg/components/securejsondata"
+	"github.com/myback/open-grafana/pkg/models"
+	"github.com/myback/open-grafana/pkg/services/sqlstore"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
